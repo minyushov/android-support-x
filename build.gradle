@@ -9,7 +9,7 @@ buildscript {
     kotlinVersion = "1.2.40"
     espressoVersion = "3.0.0"
 
-    libraryVersion = "0.2"
+    libraryVersion = "0.3"
     libraryRepo = "android"
     libraryGroupId = "com.minyushov.android.support"
     libraryVcsUrl = "https://github.com/minyushov/android-support-x.git"
