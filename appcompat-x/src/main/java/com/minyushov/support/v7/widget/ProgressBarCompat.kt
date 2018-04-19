@@ -56,8 +56,8 @@ fun ProgressBar.getSupportSecondaryProgressTintMode(): PorterDuff.Mode =
   IMPL.getSecondaryProgressTintMode(this)
 
 private val IMPL =
-  if (Build.VERSION.SDK_INT >= 23) {
-    ProgressBarCompatV23()
+  if (Build.VERSION.SDK_INT >= 21) {
+    ProgressBarCompatV21()
   } else {
     ProgressBarCompat()
   }
@@ -169,7 +169,7 @@ internal open class ProgressBarCompat {
 }
 
 @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
-internal class ProgressBarCompatV23 : ProgressBarCompat() {
+internal class ProgressBarCompatV21 : ProgressBarCompat() {
   override fun setIndeterminateTintList(view: ProgressBar, tint: ColorStateList?) {
     view.indeterminateTintList = tint
   }
