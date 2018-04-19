@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+  <declare-styleable name="CompoundDrawableHelper">
+    <attr name="drawableTint" format="color" />
+    <attr name="drawableTintMode">
+      <enum name="src_over" value="3" />
+      <enum name="src_in" value="5" />
+      <enum name="src_atop" value="9" />
+      <enum name="multiply" value="14" />
+      <enum name="screen" value="15" />
+      <enum name="add" value="16" />
+    </attr>
+  </declare-styleable>
+
+  <declare-styleable name="ProgressTintHelper">
+    <attr name="indeterminateTint" format="color" />
+    <attr name="indeterminateTintMode">
+      <enum name="src_over" value="3" />
+      <enum name="src_in" value="5" />
+      <enum name="src_atop" value="9" />
+      <enum name="multiply" value="14" />
+      <enum name="screen" value="15" />
+      <enum name="add" value="16" />
+    </attr>
+    <attr name="progressTint" format="color" />
+    <attr name="progressTintMode">
+      <enum name="src_over" value="3" />
+      <enum name="src_in" value="5" />
+      <enum name="src_atop" value="9" />
+      <enum name="multiply" value="14" />
+      <enum name="screen" value="15" />
+      <enum name="add" value="16" />
+    </attr>
+    <attr name="progressBackgroundTint" format="color" />
+    <attr name="progressBackgroundTintMode">
+      <enum name="src_over" value="3" />
+      <enum name="src_in" value="5" />
+      <enum name="src_atop" value="9" />
+      <enum name="multiply" value="14" />
+      <enum name="screen" value="15" />
+      <enum name="add" value="16" />
+    </attr>
+    <attr name="secondaryProgressTint" format="color" />
+    <attr name="secondaryProgressTintMode">
+      <enum name="src_over" value="3" />
+      <enum name="src_in" value="5" />
+      <enum name="src_atop" value="9" />
+      <enum name="multiply" value="14" />
+      <enum name="screen" value="15" />
+      <enum name="add" value="16" />
+    </attr>
+  </declare-styleable>
+
+</resources>

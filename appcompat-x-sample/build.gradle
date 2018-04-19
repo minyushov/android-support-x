@@ -1,0 +1,21 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+
+android {
+  compileSdkVersion androidCompileSdkVersion
+  buildToolsVersion androidBuildToolsVersion
+  defaultConfig {
+    applicationId "com.minyushov.appcompat.sample"
+    minSdkVersion androidMinSdkVersion
+    targetSdkVersion androidTargetSdkVersion
+    versionCode 1
+    versionName "1.0"
+  }
+}
+
+dependencies {
+  implementation project(":appcompat-x")
+  implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
+  implementation "com.android.support:appcompat-v7:$androidSupportLibraryVersion"
+  implementation "com.android.support.constraint:constraint-layout:1.1.0"
+}

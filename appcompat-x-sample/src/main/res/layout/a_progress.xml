@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:orientation="vertical"
+  android:padding="16dp">
+
+  <TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="Indeterminate Tint (set in xml)" />
+
+  <ProgressBar
+    style="?android:progressBarStyle"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="8dp"
+    android:indeterminate="true"
+    app:indeterminateTint="#0000ff"
+    tools:ignore="MissingPrefix" />
+
+  <TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="16dp"
+    android:text="Indeterminate Tint (set in code)" />
+
+  <ProgressBar
+    android:id="@+id/progress_bar_indeterminate"
+    style="?android:progressBarStyle"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="8dp"
+    android:indeterminate="true"
+    app:indeterminateTint="@color/background_tint"
+    tools:ignore="MissingPrefix" />
+
+  <TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="16dp"
+    android:text="Progress Tint (set in xml)" />
+
+  <ProgressBar
+    style="?android:progressBarStyleHorizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="8dp"
+    android:gravity="center"
+    android:max="100"
+    android:progress="33"
+    android:secondaryProgress="66"
+    app:progressBackgroundTint="#0000ff"
+    app:progressTint="#00ff00"
+    app:secondaryProgressTint="#ff0000"
+    tools:ignore="MissingPrefix" />
+
+  <TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="16dp"
+    android:text="Progress Tint (set in code)" />
+
+  <ProgressBar
+    android:id="@+id/progress_bar"
+    style="?android:progressBarStyleHorizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="8dp"
+    android:gravity="center"
+    android:max="100"
+    android:progress="33"
+    android:secondaryProgress="66"
+    tools:ignore="MissingPrefix" />
+
+</LinearLayout>

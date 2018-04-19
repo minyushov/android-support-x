@@ -1,0 +1,34 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'com.minyushov.bintray'
+
+android {
+  compileSdkVersion androidCompileSdkVersion
+  buildToolsVersion androidBuildToolsVersion
+
+  defaultConfig {
+    minSdkVersion androidMinSdkVersion
+    targetSdkVersion androidTargetSdkVersion
+  }
+  libraryVariants.all {
+    it.generateBuildConfig.enabled = false
+  }
+}
+
+dependencies {
+  api project(":support-compat-x")
+  api "com.minyushov.android:inflater:1.0.7"
+  api "com.android.support:appcompat-v7:$androidSupportLibraryVersion"
+  implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
+}
+
+bintrayUpload {
+  artifactId = "appcompat-x"
+  repo = libraryRepo
+  groupId = libraryGroupId
+  version = libraryVersion
+  vcsUrl = libraryVcsUrl
+  license = libraryLicense
+  docs = false
+  dryRun = false
+}
