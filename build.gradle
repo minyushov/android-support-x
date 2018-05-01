@@ -6,8 +6,8 @@ buildscript {
     androidBuildToolsVersion = "27.0.3"
     androidSupportLibraryVersion = "27.1.1"
 
-    kotlinVersion = "1.2.40"
     espressoVersion = "3.0.0"
+    kotlinVersion = "1.2.41"
 
     libraryVersion = "0.3"
     libraryRepo = "android"
@@ -23,7 +23,7 @@ buildscript {
   }
 
   dependencies {
-    classpath "com.android.tools.build:gradle:3.1.1"
+    classpath "com.android.tools.build:gradle:3.1.2"
     classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
     classpath "com.minyushov.gradle:bintray:1.0.4"
   }

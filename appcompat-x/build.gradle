@@ -19,7 +19,7 @@ dependencies {
   api project(":support-compat-x")
   api "com.minyushov.android:inflater:1.0.7"
   api "com.android.support:appcompat-v7:$androidSupportLibraryVersion"
-  implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
+  implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
 }
 
 bintrayUpload {
