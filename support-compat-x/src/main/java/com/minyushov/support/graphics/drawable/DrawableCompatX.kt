@@ -1,4 +1,4 @@
-package com.minyushov.support.v4.graphics.drawable
+package com.minyushov.support.graphics.drawable
 
 import android.graphics.drawable.Drawable
 import android.os.Build

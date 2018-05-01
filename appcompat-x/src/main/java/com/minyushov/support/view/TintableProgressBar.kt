@@ -1,11 +1,11 @@
-package com.minyushov.support.v7.view
+package com.minyushov.support.view
 
 import android.content.res.ColorStateList
 import android.graphics.PorterDuff
 
 /**
  * Interface which allows a [ProgressBar][android.widget.ProgressBar] to receive progress drawable
- * tinting calls from [ProgressBarCompat][com.minyushov.support.v7.widget.ProgressBarCompat]
+ * tinting calls from [ProgressBarCompat][com.minyushov.support.widget.ProgressBarCompat]
  * when running on API v20 devices or lower.
  */
 internal interface TintableProgressBar {

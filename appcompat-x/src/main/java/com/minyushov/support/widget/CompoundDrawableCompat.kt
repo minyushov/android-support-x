@@ -1,11 +1,11 @@
-package com.minyushov.support.v7.widget
+package com.minyushov.support.widget
 
 import android.content.res.ColorStateList
 import android.graphics.PorterDuff
 import android.os.Build
 import android.support.annotation.RequiresApi
 import android.widget.TextView
-import com.minyushov.support.v7.view.TintableCompoundDrawableView
+import com.minyushov.support.view.TintableCompoundDrawableView
 
 fun TextView.setSupportCompoundDrawableTintList(tint: ColorStateList?) {
   IMPL.setCompoundDrawableTintList(this, tint)

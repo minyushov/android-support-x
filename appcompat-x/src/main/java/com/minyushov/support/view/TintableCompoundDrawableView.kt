@@ -1,11 +1,11 @@
-package com.minyushov.support.v7.view
+package com.minyushov.support.view
 
 import android.content.res.ColorStateList
 import android.graphics.PorterDuff
 
 /**
  * Interface which allows a [TextView][android.widget.TextView] to receive compound drawable
- * tinting calls from [CompoundDrawableCompat][com.minyushov.support.v7.widget.CompoundDrawableCompat]
+ * tinting calls from [CompoundDrawableCompat][com.minyushov.support.widget.CompoundDrawableCompat]
  * when running on API v20 devices or lower.
  */
 internal interface TintableCompoundDrawableView {

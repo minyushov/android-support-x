@@ -1,4 +1,4 @@
-package com.minyushov.support.v7
+package com.minyushov.support
 
 import android.content.Context
 import com.minyushov.inflater.ContextWrapper

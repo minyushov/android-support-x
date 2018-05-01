@@ -6,11 +6,11 @@ import android.graphics.Color
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.widget.ProgressBar
-import com.minyushov.support.v7.AppCompatX
-import com.minyushov.support.v7.widget.setSupportIndeterminateTintList
-import com.minyushov.support.v7.widget.setSupportProgressBackgroundTintList
-import com.minyushov.support.v7.widget.setSupportProgressTintList
-import com.minyushov.support.v7.widget.setSupportSecondaryProgressTintList
+import com.minyushov.support.AppCompatX
+import com.minyushov.support.widget.setSupportIndeterminateTintList
+import com.minyushov.support.widget.setSupportProgressBackgroundTintList
+import com.minyushov.support.widget.setSupportProgressTintList
+import com.minyushov.support.widget.setSupportSecondaryProgressTintList
 
 class ProgressActivity : AppCompatActivity() {
   override fun attachBaseContext(context: Context) {

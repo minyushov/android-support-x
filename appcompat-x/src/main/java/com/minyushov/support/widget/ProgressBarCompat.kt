@@ -1,11 +1,11 @@
-package com.minyushov.support.v7.widget
+package com.minyushov.support.widget
 
 import android.content.res.ColorStateList
 import android.graphics.PorterDuff
 import android.os.Build
 import android.support.annotation.RequiresApi
 import android.widget.ProgressBar
-import com.minyushov.support.v7.view.TintableProgressBar
+import com.minyushov.support.view.TintableProgressBar
 
 fun ProgressBar.setSupportIndeterminateTintList(tint: ColorStateList?) =
   IMPL.setIndeterminateTintList(this, tint)

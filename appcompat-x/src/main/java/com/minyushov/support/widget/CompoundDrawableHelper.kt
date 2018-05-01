@@ -1,4 +1,4 @@
-package com.minyushov.support.v7.widget
+package com.minyushov.support.widget
 
 import android.annotation.SuppressLint
 import android.content.res.ColorStateList

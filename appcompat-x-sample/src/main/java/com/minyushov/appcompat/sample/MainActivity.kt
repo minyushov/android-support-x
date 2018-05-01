@@ -5,7 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.View
-import com.minyushov.support.v7.AppCompatX
+import com.minyushov.support.AppCompatX
 
 class MainActivity : AppCompatActivity() {
   override fun attachBaseContext(context: Context) {

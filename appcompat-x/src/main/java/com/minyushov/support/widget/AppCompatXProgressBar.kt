@@ -1,4 +1,4 @@
-package com.minyushov.support.v7.widget
+package com.minyushov.support.widget
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -7,7 +7,7 @@ import android.graphics.PorterDuff
 import android.support.v7.widget.TintContextWrapper
 import android.util.AttributeSet
 import android.widget.ProgressBar
-import com.minyushov.support.v7.view.TintableProgressBar
+import com.minyushov.support.view.TintableProgressBar
 
 @SuppressLint("RestrictedApi")
 class AppCompatXProgressBar : ProgressBar, TintableProgressBar {
