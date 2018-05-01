@@ -3,7 +3,7 @@ apply plugin: 'kotlin-android'
 
 android {
   compileSdkVersion androidCompileSdkVersion
-  buildToolsVersion androidBuildToolsVersion
+
   defaultConfig {
     applicationId "com.minyushov.appcompat.sample"
     minSdkVersion androidMinSdkVersion

@@ -3,10 +3,8 @@ buildscript {
     androidMinSdkVersion = 19
     androidCompileSdkVersion = 27
     androidTargetSdkVersion = 27
-    androidBuildToolsVersion = "27.0.3"
     androidSupportLibraryVersion = "27.1.1"
 
-    espressoVersion = "3.0.0"
     kotlinVersion = "1.2.41"
 
     libraryVersion = "0.3"
