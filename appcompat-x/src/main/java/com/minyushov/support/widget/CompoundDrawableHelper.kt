@@ -9,7 +9,7 @@ import android.support.v7.widget.DrawableUtils
 import android.support.v7.widget.TintTypedArray
 import android.util.AttributeSet
 import android.widget.TextView
-import com.minyushov.support.v7.R
+import com.minyushov.support.appcompat.R
 
 internal open class CompoundDrawableHelper(private val view: TextView) {
   companion object {

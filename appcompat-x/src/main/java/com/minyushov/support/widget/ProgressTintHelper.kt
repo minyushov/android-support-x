@@ -10,8 +10,8 @@ import android.support.v7.widget.DrawableUtils
 import android.support.v7.widget.TintTypedArray
 import android.util.AttributeSet
 import android.widget.ProgressBar
+import com.minyushov.support.appcompat.R
 import com.minyushov.support.graphics.drawable.wrap
-import com.minyushov.support.v7.R
 
 internal class ProgressTintHelper(private val view: ProgressBar) {
   companion object {
