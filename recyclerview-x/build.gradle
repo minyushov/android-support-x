@@ -1,0 +1,31 @@
+apply plugin: 'com.android.library'
+apply plugin: 'com.minyushov.bintray'
+
+android {
+  compileSdkVersion androidCompileSdkVersion
+
+  defaultConfig {
+    minSdkVersion androidMinSdkVersion
+    targetSdkVersion androidTargetSdkVersion
+  }
+
+  libraryVariants.all {
+    it.generateBuildConfig.enabled = false
+  }
+}
+
+dependencies {
+  api "com.android.support:recyclerview-v7:$androidSupportLibraryVersion"
+  testImplementation "junit:junit:4.12"
+}
+
+bintrayUpload {
+  artifactId = "recyclerview-x"
+  repo = libraryRepo
+  groupId = libraryGroupId
+  version = libraryVersion
+  vcsUrl = libraryVcsUrl
+  license = libraryLicense
+  docs = false
+  dryRun = false
+}
