@@ -22,7 +22,7 @@ class ProgressActivity : AppCompatActivity() {
     setContentView(R.layout.a_progress)
 
     val progressBarIndeterminate = findViewById<ProgressBar>(R.id.progress_bar_indeterminate)
-    progressBarIndeterminate.setSupportIndeterminateTintList(ColorStateList.valueOf(Color.BLUE))
+    progressBarIndeterminate.setSupportIndeterminateTintList(ColorStateList.valueOf(Color.RED))
 
     val progressBar = findViewById<ProgressBar>(R.id.progress_bar)
     progressBar.setSupportProgressTintList(ColorStateList.valueOf(Color.GREEN))
