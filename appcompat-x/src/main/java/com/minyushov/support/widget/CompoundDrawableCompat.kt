@@ -24,8 +24,10 @@ fun TextView.getSupportCompoundDrawableTintMode(): PorterDuff.Mode {
 }
 
 private val IMPL =
-  if (Build.VERSION.SDK_INT >= 23) {
-    CompoundDrawableCompatV23()
+  // Compound drawable tint is supported by the framework since API 23,
+  // but it's not working for relative compound drawables (drawableStart, drawableEnd)
+  if (Build.VERSION.SDK_INT >= 24) {
+    CompoundDrawableCompatV24()
   } else {
     CompoundDrawableCompat()
   }
@@ -59,7 +61,7 @@ internal open class CompoundDrawableCompat {
 }
 
 @RequiresApi(Build.VERSION_CODES.M)
-internal class CompoundDrawableCompatV23 : CompoundDrawableCompat() {
+internal class CompoundDrawableCompatV24 : CompoundDrawableCompat() {
   override fun setCompoundDrawableTintList(view: TextView, tint: ColorStateList?) {
     view.compoundDrawableTintList = tint
   }
