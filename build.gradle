@@ -1,13 +1,13 @@
 buildscript {
   ext {
-    androidMinSdkVersion = 19
+    androidMinSdkVersion = 17
     androidCompileSdkVersion = 27
     androidTargetSdkVersion = 27
     androidSupportLibraryVersion = "27.1.1"
 
     kotlinVersion = "1.2.41"
 
-    libraryVersion = "27.1.1-1"
+    libraryVersion = "27.1.1-2"
     libraryRepo = "android"
     libraryGroupId = "com.minyushov.android.support"
     libraryVcsUrl = "https://github.com/minyushov/android-support-x.git"
@@ -23,7 +23,7 @@ buildscript {
   dependencies {
     classpath "com.android.tools.build:gradle:3.1.2"
     classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
-    classpath "com.minyushov.gradle:bintray:1.0.4"
+    classpath "com.minyushov.gradle:bintray:1.0.5"
   }
 }
 
