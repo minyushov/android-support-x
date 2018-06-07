@@ -3,13 +3,13 @@ buildscript {
     androidMinSdkVersion = 17
     androidCompileSdkVersion = 28
     androidTargetSdkVersion = 28
-    androidSupportLibraryVersion = "28.0.0-alpha3"
+    androidXVersion = "1.0.0-alpha3"
 
     kotlinVersion = "1.2.41"
 
-    libraryVersion = "28.0.0-alpha3-1"
-    libraryRepo = "android"
-    libraryGroupId = "com.minyushov.android.support"
+    libraryVersion = "1.0.0-alpha3-1"
+    libraryRepo = "androidx"
+    libraryGroupId = "msv.androidx"
     libraryVcsUrl = "https://github.com/minyushov/android-support-x.git"
     libraryLicense = "Apache-2.0"
   }

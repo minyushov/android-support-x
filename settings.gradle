@@ -1,4 +1,4 @@
 include ':appcompat-x-sample'
-include ':support-compat-x'
+include ':core-x'
 include ':appcompat-x'
 include ':recyclerview-x'

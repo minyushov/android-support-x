@@ -15,12 +15,13 @@ android {
 }
 
 dependencies {
-  api "com.android.support:recyclerview-v7:$androidSupportLibraryVersion"
+  api "androidx.recyclerview:recyclerview:$androidXVersion"
+  testImplementation "androidx.test:rules:1.1.0-alpha3"
   testImplementation "junit:junit:4.12"
 }
 
 bintrayUpload {
-  artifactId = "recyclerview-x"
+  artifactId = "recyclerview"
   repo = libraryRepo
   groupId = libraryGroupId
   version = libraryVersion
