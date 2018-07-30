@@ -57,6 +57,18 @@ internal class ProgressTintHelper(private val view: ProgressBar) {
       }
   }
 
+  fun onSetProgress(progress: Int) {
+    if (progressTintInfo != null) {
+      view.invalidate()
+    }
+  }
+
+  fun onSetSecondaryProgress(progress: Int) {
+    if (progressTintInfo != null) {
+      view.invalidate()
+    }
+  }
+
   fun setIndeterminateTintList(tint: ColorStateList?) {
     if (progressTintInfo == null) {
       progressTintInfo = ProgressTintInfo()

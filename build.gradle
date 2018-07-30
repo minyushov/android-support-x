@@ -5,9 +5,9 @@ buildscript {
     androidTargetSdkVersion = 28
     androidXVersion = "1.0.0-alpha3"
 
-    kotlinVersion = "1.2.41"
+    kotlinVersion = "1.2.51"
 
-    libraryVersion = "1.0.0-alpha3-1"
+    libraryVersion = "1.0.0-rc01"
     libraryRepo = "androidx"
     libraryGroupId = "msv.androidx"
     libraryVcsUrl = "https://github.com/minyushov/android-support-x.git"
@@ -21,7 +21,7 @@ buildscript {
   }
 
   dependencies {
-    classpath "com.android.tools.build:gradle:3.1.3"
+    classpath "com.android.tools.build:gradle:3.2.0-beta05"
     classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
     classpath "com.minyushov.gradle:bintray:1.1.0"
   }

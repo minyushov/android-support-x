@@ -82,4 +82,14 @@ class AppCompatXProgressBar : ProgressBar, TintableProgressBar {
   override fun getSupportSecondaryProgressTintMode(): PorterDuff.Mode {
     return progressTintHelper?.getSecondaryProgressTintMode() ?: ProgressTintHelper.DEFAULT_TINT_MODE
   }
+
+  override fun setProgress(progress: Int) {
+    super.setProgress(progress)
+    progressTintHelper?.onSetProgress(progress)
+  }
+
+  override fun setSecondaryProgress(secondaryProgress: Int) {
+    super.setSecondaryProgress(secondaryProgress)
+    progressTintHelper?.onSetSecondaryProgress(progress)
+  }
 }
