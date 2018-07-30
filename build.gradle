@@ -7,7 +7,7 @@ buildscript {
 
     kotlinVersion = "1.2.51"
 
-    libraryVersion = "28.0.0-alpha3-2"
+    libraryVersion = "28.0.0-alpha3-3"
     libraryRepo = "android"
     libraryGroupId = "com.minyushov.android.support"
     libraryVcsUrl = "https://github.com/minyushov/android-support-x.git"
