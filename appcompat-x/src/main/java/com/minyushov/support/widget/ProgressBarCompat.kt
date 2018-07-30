@@ -3,226 +3,117 @@ package com.minyushov.support.widget
 import android.content.res.ColorStateList
 import android.graphics.PorterDuff
 import android.os.Build
-import android.support.annotation.RequiresApi
 import android.widget.ProgressBar
 import com.minyushov.support.view.TintableProgressBar
 
 fun ProgressBar.setSupportIndeterminateTintList(tint: ColorStateList?) =
-  IMPL.setIndeterminateTintList(this, tint)
+  when {
+    Build.VERSION.SDK_INT >= 21 -> indeterminateTintList = tint
+    this is TintableProgressBar -> setSupportIndeterminateTintList(tint)
+    else -> Unit
+  }
 
 fun ProgressBar.getSupportIndeterminateTintList(): ColorStateList? =
-  IMPL.getIndeterminateTintList(this)
+  when {
+    Build.VERSION.SDK_INT >= 21 -> indeterminateTintList
+    this is TintableProgressBar -> getSupportIndeterminateTintList()
+    else -> null
+  }
 
 fun ProgressBar.setSupportIndeterminateTintMode(tintMode: PorterDuff.Mode) =
-  IMPL.setIndeterminateTintMode(this, tintMode)
+  when {
+    Build.VERSION.SDK_INT >= 21 -> indeterminateTintMode = tintMode
+    this is TintableProgressBar -> setSupportIndeterminateTintMode(tintMode)
+    else -> Unit
+  }
 
 fun ProgressBar.getSupportIndeterminateTintMode(): PorterDuff.Mode =
-  IMPL.getIndeterminateTintMode(this)
+  when {
+    Build.VERSION.SDK_INT >= 21 -> indeterminateTintMode
+    this is TintableProgressBar -> getSupportIndeterminateTintMode()
+    else -> ProgressTintHelper.DEFAULT_TINT_MODE
+  }
 
 fun ProgressBar.setSupportProgressTintList(tint: ColorStateList?) =
-  IMPL.setProgressTintList(this, tint)
+  when {
+    Build.VERSION.SDK_INT >= 22 -> progressTintList = tint
+    this is TintableProgressBar -> setSupportProgressTintList(tint)
+    else -> Unit
+  }
 
 fun ProgressBar.getSupportProgressTintList(): ColorStateList? =
-  IMPL.getProgressTintList(this)
+  when {
+    Build.VERSION.SDK_INT >= 22 -> progressTintList
+    this is TintableProgressBar -> getSupportProgressTintList()
+    else -> null
+  }
 
 fun ProgressBar.setSupportProgressTintMode(tintMode: PorterDuff.Mode) =
-  IMPL.setProgressTintMode(this, tintMode)
+  when {
+    Build.VERSION.SDK_INT >= 22 -> progressTintMode = tintMode
+    this is TintableProgressBar -> setSupportProgressTintMode(tintMode)
+    else -> Unit
+  }
 
 fun ProgressBar.getSupportProgressTintMode(): PorterDuff.Mode =
-  IMPL.getProgressTintMode(this)
+  when {
+    Build.VERSION.SDK_INT >= 22 -> progressTintMode
+    this is TintableProgressBar -> getSupportProgressTintMode()
+    else -> ProgressTintHelper.DEFAULT_TINT_MODE
+  }
 
 fun ProgressBar.setSupportProgressBackgroundTintList(tint: ColorStateList?) =
-  IMPL.setProgressBackgroundTintList(this, tint)
+  when {
+    Build.VERSION.SDK_INT >= 22 -> progressBackgroundTintList = tint
+    this is TintableProgressBar -> setSupportProgressBackgroundTintList(tint)
+    else -> Unit
+  }
 
 fun ProgressBar.getSupportProgressBackgroundTintList(): ColorStateList? =
-  IMPL.getProgressBackgroundTintList(this)
+  when {
+    Build.VERSION.SDK_INT >= 22 -> progressBackgroundTintList
+    this is TintableProgressBar -> getSupportProgressBackgroundTintList()
+    else -> null
+  }
 
 fun ProgressBar.setSupportProgressBackgroundTintMode(tintMode: PorterDuff.Mode) =
-  IMPL.setProgressBackgroundTintMode(this, tintMode)
+  when {
+    Build.VERSION.SDK_INT >= 22 -> progressBackgroundTintMode = tintMode
+    this is TintableProgressBar -> setSupportProgressBackgroundTintMode(tintMode)
+    else -> Unit
+  }
 
 fun ProgressBar.getSupportProgressBackgroundTintMode(): PorterDuff.Mode =
-  IMPL.getProgressBackgroundTintMode(this)
+  when {
+    Build.VERSION.SDK_INT >= 22 -> progressBackgroundTintMode
+    this is TintableProgressBar -> getSupportProgressBackgroundTintMode()
+    else -> ProgressTintHelper.DEFAULT_TINT_MODE
+  }
 
 fun ProgressBar.setSupportSecondaryProgressTintList(tint: ColorStateList?) =
-  IMPL.setSecondaryProgressTintList(this, tint)
+  when {
+    Build.VERSION.SDK_INT >= 22 -> secondaryProgressTintList = tint
+    this is TintableProgressBar -> setSupportSecondaryProgressTintList(tint)
+    else -> Unit
+  }
 
 fun ProgressBar.getSupportSecondaryProgressTintList(): ColorStateList? =
-  IMPL.getSecondaryProgressTintList(this)
+  when {
+    Build.VERSION.SDK_INT >= 22 -> secondaryProgressTintList
+    this is TintableProgressBar -> getSupportSecondaryProgressTintList()
+    else -> null
+  }
 
 fun ProgressBar.setSupportSecondaryProgressTintMode(tintMode: PorterDuff.Mode) =
-  IMPL.setSecondaryProgressTintMode(this, tintMode)
+  when {
+    Build.VERSION.SDK_INT >= 22 -> secondaryProgressTintMode = tintMode
+    this is TintableProgressBar -> setSupportSecondaryProgressTintMode(tintMode)
+    else -> Unit
+  }
 
 fun ProgressBar.getSupportSecondaryProgressTintMode(): PorterDuff.Mode =
-  IMPL.getSecondaryProgressTintMode(this)
-
-private val IMPL =
-  if (Build.VERSION.SDK_INT >= 21) {
-    ProgressBarCompatV21()
-  } else {
-    ProgressBarCompat()
+  when {
+    Build.VERSION.SDK_INT >= 22 -> secondaryProgressTintMode
+    this is TintableProgressBar -> getSupportSecondaryProgressTintMode()
+    else -> ProgressTintHelper.DEFAULT_TINT_MODE
   }
-
-internal open class ProgressBarCompat {
-  open fun setIndeterminateTintList(view: ProgressBar, tint: ColorStateList?) {
-    if (view is TintableProgressBar) {
-      view.setSupportIndeterminateTintList(tint)
-    }
-  }
-
-  open fun getIndeterminateTintList(view: ProgressBar): ColorStateList? {
-    if (view is TintableProgressBar) {
-      return view.getSupportIndeterminateTintList()
-    }
-    return null
-  }
-
-  open fun setIndeterminateTintMode(view: ProgressBar, tintMode: PorterDuff.Mode) {
-    if (view is TintableProgressBar) {
-      view.setSupportIndeterminateTintMode(tintMode)
-    }
-  }
-
-  open fun getIndeterminateTintMode(view: ProgressBar): PorterDuff.Mode {
-    if (view is TintableProgressBar) {
-      return view.getSupportIndeterminateTintMode()
-    }
-    return ProgressTintHelper.DEFAULT_TINT_MODE
-  }
-
-  open fun setProgressTintList(view: ProgressBar, tint: ColorStateList?) {
-    if (view is TintableProgressBar) {
-      view.setSupportProgressTintList(tint)
-    }
-  }
-
-  open fun getProgressTintList(view: ProgressBar): ColorStateList? {
-    if (view is TintableProgressBar) {
-      return view.getSupportProgressTintList()
-    }
-    return null
-  }
-
-  open fun setProgressTintMode(view: ProgressBar, tintMode: PorterDuff.Mode) {
-    if (view is TintableProgressBar) {
-      view.setSupportProgressTintMode(tintMode)
-    }
-  }
-
-  open fun getProgressTintMode(view: ProgressBar): PorterDuff.Mode {
-    if (view is TintableProgressBar) {
-      return view.getSupportProgressTintMode()
-    }
-    return ProgressTintHelper.DEFAULT_TINT_MODE
-  }
-
-  open fun setProgressBackgroundTintList(view: ProgressBar, tint: ColorStateList?) {
-    if (view is TintableProgressBar) {
-      view.setSupportProgressBackgroundTintList(tint)
-    }
-  }
-
-  open fun getProgressBackgroundTintList(view: ProgressBar): ColorStateList? {
-    if (view is TintableProgressBar) {
-      return view.getSupportProgressBackgroundTintList()
-    }
-    return null
-  }
-
-  open fun setProgressBackgroundTintMode(view: ProgressBar, tintMode: PorterDuff.Mode) {
-    if (view is TintableProgressBar) {
-      view.setSupportProgressBackgroundTintMode(tintMode)
-    }
-  }
-
-  open fun getProgressBackgroundTintMode(view: ProgressBar): PorterDuff.Mode {
-    if (view is TintableProgressBar) {
-      return view.getSupportProgressBackgroundTintMode()
-    }
-    return ProgressTintHelper.DEFAULT_TINT_MODE
-  }
-
-  open fun setSecondaryProgressTintList(view: ProgressBar, tint: ColorStateList?) {
-    if (view is TintableProgressBar) {
-      view.setSupportSecondaryProgressTintList(tint)
-    }
-  }
-
-  open fun getSecondaryProgressTintList(view: ProgressBar): ColorStateList? {
-    if (view is TintableProgressBar) {
-      return view.getSupportSecondaryProgressTintList()
-    }
-    return null
-  }
-
-  open fun setSecondaryProgressTintMode(view: ProgressBar, tintMode: PorterDuff.Mode) {
-    if (view is TintableProgressBar) {
-      view.setSupportSecondaryProgressTintMode(tintMode)
-    }
-  }
-
-  open fun getSecondaryProgressTintMode(view: ProgressBar): PorterDuff.Mode {
-    if (view is TintableProgressBar) {
-      return view.getSupportProgressTintMode()
-    }
-    return ProgressTintHelper.DEFAULT_TINT_MODE
-  }
-}
-
-@RequiresApi(Build.VERSION_CODES.LOLLIPOP)
-internal class ProgressBarCompatV21 : ProgressBarCompat() {
-  override fun setIndeterminateTintList(view: ProgressBar, tint: ColorStateList?) {
-    view.indeterminateTintList = tint
-  }
-
-  override fun getIndeterminateTintList(view: ProgressBar): ColorStateList? =
-    view.indeterminateTintList
-
-  override fun setIndeterminateTintMode(view: ProgressBar, tintMode: PorterDuff.Mode) {
-    view.indeterminateTintMode = tintMode
-  }
-
-  override fun getIndeterminateTintMode(view: ProgressBar): PorterDuff.Mode =
-    view.indeterminateTintMode ?: ProgressTintHelper.DEFAULT_TINT_MODE
-
-  override fun setProgressTintList(view: ProgressBar, tint: ColorStateList?) {
-    view.progressTintList = tint
-  }
-
-  override fun getProgressTintList(view: ProgressBar): ColorStateList? =
-    view.progressTintList
-
-  override fun setProgressTintMode(view: ProgressBar, tintMode: PorterDuff.Mode) {
-    view.progressTintMode = tintMode
-  }
-
-  override fun getProgressTintMode(view: ProgressBar): PorterDuff.Mode =
-    view.progressTintMode ?: ProgressTintHelper.DEFAULT_TINT_MODE
-
-  override fun setProgressBackgroundTintList(view: ProgressBar, tint: ColorStateList?) {
-    view.progressBackgroundTintList = tint
-  }
-
-  override fun getProgressBackgroundTintList(view: ProgressBar): ColorStateList? =
-    view.progressBackgroundTintList
-
-  override fun setProgressBackgroundTintMode(view: ProgressBar, tintMode: PorterDuff.Mode) {
-    view.progressBackgroundTintMode = tintMode
-  }
-
-  override fun getProgressBackgroundTintMode(view: ProgressBar): PorterDuff.Mode =
-    view.progressBackgroundTintMode ?: ProgressTintHelper.DEFAULT_TINT_MODE
-
-  override fun setSecondaryProgressTintList(view: ProgressBar, tint: ColorStateList?) {
-    view.secondaryProgressTintList = tint
-  }
-
-  override fun getSecondaryProgressTintList(view: ProgressBar): ColorStateList? =
-    view.secondaryProgressTintList
-
-  override fun setSecondaryProgressTintMode(view: ProgressBar, tintMode: PorterDuff.Mode) {
-    view.secondaryProgressTintMode = tintMode
-  }
-
-  override fun getSecondaryProgressTintMode(view: ProgressBar): PorterDuff.Mode =
-    view.secondaryProgressTintMode ?: ProgressTintHelper.DEFAULT_TINT_MODE
-}

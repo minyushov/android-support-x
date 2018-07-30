@@ -76,4 +76,25 @@
     android:secondaryProgress="66"
     tools:ignore="MissingPrefix" />
 
+  <TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="16dp"
+    android:text="Progress Tint (custom progress drawable)" />
+
+  <ProgressBar
+    style="?android:progressBarStyleHorizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="8dp"
+    android:gravity="center"
+    android:max="100"
+    android:progress="33"
+    android:progressDrawable="@drawable/progress_horizontal"
+    android:secondaryProgress="66"
+    app:progressBackgroundTint="#0000ff"
+    app:progressTint="#00ff00"
+    app:secondaryProgressTint="#ff0000"
+    tools:ignore="MissingPrefix" />
+
 </LinearLayout>
