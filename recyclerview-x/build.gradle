@@ -16,7 +16,7 @@ android {
 
 dependencies {
   api "androidx.recyclerview:recyclerview:$androidXVersion"
-  testImplementation "androidx.test:rules:1.1.0-alpha3"
+  testImplementation "androidx.test:rules:1.1.0-alpha4"
   testImplementation "junit:junit:4.12"
 }
 
