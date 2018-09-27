@@ -17,7 +17,7 @@ android {
 
 dependencies {
   api project(":support-compat-x")
-  api "com.minyushov.android:inflater:1.0.9"
+  api "com.minyushov.android:inflater:1.0.10"
   api "com.android.support:appcompat-v7:$androidSupportLibraryVersion"
   implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
 }
