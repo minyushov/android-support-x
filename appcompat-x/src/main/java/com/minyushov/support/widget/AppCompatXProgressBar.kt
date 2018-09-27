@@ -27,11 +27,11 @@ class AppCompatXProgressBar : ProgressBar, TintableProgressBar {
     return progressTintHelper?.getIndeterminateTintList()
   }
 
-  override fun setSupportIndeterminateTintMode(tintMode: PorterDuff.Mode) {
+  override fun setSupportIndeterminateTintMode(tintMode: PorterDuff.Mode?) {
     progressTintHelper?.setIndeterminateTintMode(tintMode)
   }
 
-  override fun getSupportIndeterminateTintMode(): PorterDuff.Mode {
+  override fun getSupportIndeterminateTintMode(): PorterDuff.Mode? {
     return progressTintHelper?.getIndeterminateTintMode() ?: ProgressTintHelper.DEFAULT_TINT_MODE
   }
 
@@ -43,11 +43,11 @@ class AppCompatXProgressBar : ProgressBar, TintableProgressBar {
     return progressTintHelper?.getProgressTintList()
   }
 
-  override fun setSupportProgressTintMode(tintMode: PorterDuff.Mode) {
+  override fun setSupportProgressTintMode(tintMode: PorterDuff.Mode?) {
     progressTintHelper?.setProgressTintMode(tintMode)
   }
 
-  override fun getSupportProgressTintMode(): PorterDuff.Mode {
+  override fun getSupportProgressTintMode(): PorterDuff.Mode? {
     return progressTintHelper?.getProgressTintMode() ?: ProgressTintHelper.DEFAULT_TINT_MODE
   }
 
@@ -59,11 +59,11 @@ class AppCompatXProgressBar : ProgressBar, TintableProgressBar {
     return progressTintHelper?.getProgressBackgroundTintList()
   }
 
-  override fun setSupportProgressBackgroundTintMode(tintMode: PorterDuff.Mode) {
+  override fun setSupportProgressBackgroundTintMode(tintMode: PorterDuff.Mode?) {
     progressTintHelper?.setProgressBackgroundTintMode(tintMode)
   }
 
-  override fun getSupportProgressBackgroundTintMode(): PorterDuff.Mode {
+  override fun getSupportProgressBackgroundTintMode(): PorterDuff.Mode? {
     return progressTintHelper?.getProgressBackgroundTintMode() ?: ProgressTintHelper.DEFAULT_TINT_MODE
   }
 
@@ -75,11 +75,11 @@ class AppCompatXProgressBar : ProgressBar, TintableProgressBar {
     return progressTintHelper?.getSecondaryProgressTintList()
   }
 
-  override fun setSupportSecondaryProgressTintMode(tintMode: PorterDuff.Mode) {
+  override fun setSupportSecondaryProgressTintMode(tintMode: PorterDuff.Mode?) {
     progressTintHelper?.setSecondaryProgressTintMode(tintMode)
   }
 
-  override fun getSupportSecondaryProgressTintMode(): PorterDuff.Mode {
+  override fun getSupportSecondaryProgressTintMode(): PorterDuff.Mode? {
     return progressTintHelper?.getSecondaryProgressTintMode() ?: ProgressTintHelper.DEFAULT_TINT_MODE
   }
 
