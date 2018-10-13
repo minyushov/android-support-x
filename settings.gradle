@@ -1,4 +1,4 @@
-include ':appcompat-x-sample'
+include ':androidx-sample'
 include ':androidx-core'
-include ':appcompat-x'
+include ':androidx-appcompat'
 include ':androidx-recyclerview'
