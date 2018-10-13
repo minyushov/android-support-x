@@ -2,16 +2,16 @@
 ```groovy
 repositories {
   maven {
-    url  "http://dl.bintray.com/minyushov/android" 
+    url  "http://dl.bintray.com/minyushov/androidx"
   }
 }
 ```
 ```groovy
 dependencies {
-  implementation 'com.minyushov.android.support:support-compat-x:version'
-  implementation 'com.minyushov.android.support:recyclerview-x:version'
-  implementation 'com.minyushov.android.support:appcompat-x:version'
+  implementation 'androidx.ext:core:version'
+  implementation 'androidx.ext:recyclerview:version'
+  implementation 'androidx.ext:appcompat:version'
 }
 ```
 
-Please replace `version` with the latest version: [![Download](https://api.bintray.com/packages/minyushov/android/appcompat-x/images/download.svg)](https://bintray.com/minyushov/android/appcompat-x/_latestVersion)
+Please replace `version` with the latest version: [![Download](https://api.bintray.com/packages/minyushov/androidx/core/images/download.svg)](https://bintray.com/minyushov/androidx/core/_latestVersion)
