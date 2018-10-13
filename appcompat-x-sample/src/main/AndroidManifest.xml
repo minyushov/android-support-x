@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:tools="http://schemas.android.com/tools"
-  package="msv.androidx.sample">
+  package="androidx.ext.sample">
 
   <application
     android:allowBackup="false"
@@ -12,7 +12,7 @@
     android:theme="@style/AppTheme"
     tools:ignore="GoogleAppIndexingWarning">
 
-    <activity android:name=".MainActivity">
+    <activity android:name="androidx.ext.sample.MainActivity">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
 
@@ -20,8 +20,8 @@
       </intent-filter>
     </activity>
 
-    <activity android:name=".ProgressActivity" />
-    <activity android:name=".CompoundDrawableActivity" />
+    <activity android:name="androidx.ext.sample.ProgressActivity" />
+    <activity android:name="androidx.ext.sample.CompoundDrawableActivity" />
 
   </application>
 

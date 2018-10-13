@@ -5,7 +5,7 @@ android {
   compileSdkVersion androidCompileSdkVersion
 
   defaultConfig {
-    applicationId "com.minyushov.appcompat.sample"
+    applicationId "androidx.ext.sample"
     minSdkVersion androidMinSdkVersion
     targetSdkVersion androidTargetSdkVersion
     versionCode 1
@@ -16,6 +16,5 @@ android {
 dependencies {
   implementation project(":appcompat-x")
   implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
-  implementation "androidx.appcompat:appcompat:$androidXVersion"
   implementation "androidx.constraintlayout:constraintlayout:1.1.3"
 }

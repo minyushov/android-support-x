@@ -9,7 +9,7 @@ buildscript {
 
     libraryVersion = "1.0.0"
     libraryRepo = "androidx"
-    libraryGroupId = "msv.androidx"
+    libraryGroupId = "androidx.ext"
 
     libraryVcsUrl = "https://github.com/minyushov/android-support-x.git"
     libraryLicense = "Apache-2.0"
