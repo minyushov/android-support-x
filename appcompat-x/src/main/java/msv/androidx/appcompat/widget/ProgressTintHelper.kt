@@ -28,31 +28,31 @@ internal class ProgressTintHelper(private val view: ProgressBar) {
       .obtainStyledAttributes(view.context, attrs, R.styleable.ProgressTintHelper, defStyleAttr, 0)
       .use {
         findValue(R.styleable.ProgressTintHelper_indeterminateTint) {
-          view.setSupportIndeterminateTintList(getColorStateList(it))
+          ProgressBarCompat.setIndeterminateTintList(view, getColorStateList(it))
         }
         findValue(R.styleable.ProgressTintHelper_indeterminateTintMode) {
-          view.setSupportIndeterminateTintMode(DrawableUtils.parseTintMode(getInt(it, -1), DEFAULT_TINT_MODE))
+          ProgressBarCompat.setIndeterminateTintMode(view, DrawableUtils.parseTintMode(getInt(it, -1), DEFAULT_TINT_MODE))
         }
 
         findValue(R.styleable.ProgressTintHelper_progressTint) {
-          view.setSupportProgressTintList(getColorStateList(it))
+          ProgressBarCompat.setProgressTintList(view, getColorStateList(it))
         }
         findValue(R.styleable.ProgressTintHelper_progressTintMode) {
-          view.setSupportProgressTintMode(DrawableUtils.parseTintMode(getInt(it, -1), DEFAULT_TINT_MODE))
+          ProgressBarCompat.setProgressTintMode(view, DrawableUtils.parseTintMode(getInt(it, -1), DEFAULT_TINT_MODE))
         }
 
         findValue(R.styleable.ProgressTintHelper_progressBackgroundTint) {
-          view.setSupportProgressBackgroundTintList(getColorStateList(it))
+          ProgressBarCompat.setProgressBackgroundTintList(view, getColorStateList(it))
         }
         findValue(R.styleable.ProgressTintHelper_progressBackgroundTintMode) {
-          view.setSupportProgressBackgroundTintMode(DrawableUtils.parseTintMode(getInt(it, -1), DEFAULT_TINT_MODE))
+          ProgressBarCompat.setProgressBackgroundTintMode(view, DrawableUtils.parseTintMode(getInt(it, -1), DEFAULT_TINT_MODE))
         }
 
         findValue(R.styleable.ProgressTintHelper_secondaryProgressTint) {
-          view.setSupportSecondaryProgressTintList(getColorStateList(it))
+          ProgressBarCompat.setSecondaryProgressTintList(view, getColorStateList(it))
         }
         findValue(R.styleable.ProgressTintHelper_secondaryProgressTintMode) {
-          view.setSupportSecondaryProgressTintMode(DrawableUtils.parseTintMode(getInt(it, -1), DEFAULT_TINT_MODE))
+          ProgressBarCompat.setSecondaryProgressTintMode(view, DrawableUtils.parseTintMode(getInt(it, -1), DEFAULT_TINT_MODE))
         }
       }
   }
@@ -83,7 +83,7 @@ internal class ProgressTintHelper(private val view: ProgressBar) {
   fun getIndeterminateTintList(): ColorStateList? =
     progressTintInfo?.indeterminateTintList
 
-  fun setIndeterminateTintMode(tintMode: PorterDuff.Mode) {
+  fun setIndeterminateTintMode(tintMode: PorterDuff.Mode?) {
     if (progressTintInfo == null) {
       progressTintInfo = ProgressTintInfo()
     }
@@ -140,7 +140,7 @@ internal class ProgressTintHelper(private val view: ProgressBar) {
   fun getProgressTintList(): ColorStateList? =
     progressTintInfo?.progressTintList
 
-  fun setProgressTintMode(tintMode: PorterDuff.Mode) {
+  fun setProgressTintMode(tintMode: PorterDuff.Mode?) {
     if (progressTintInfo == null) {
       progressTintInfo = ProgressTintInfo()
     }
@@ -194,7 +194,7 @@ internal class ProgressTintHelper(private val view: ProgressBar) {
   fun getProgressBackgroundTintList(): ColorStateList? =
     progressTintInfo?.progressBackgroundTintList
 
-  fun setProgressBackgroundTintMode(tintMode: PorterDuff.Mode) {
+  fun setProgressBackgroundTintMode(tintMode: PorterDuff.Mode?) {
     if (progressTintInfo == null) {
       progressTintInfo = ProgressTintInfo()
     }
@@ -248,7 +248,7 @@ internal class ProgressTintHelper(private val view: ProgressBar) {
   fun getSecondaryProgressTintList(): ColorStateList? =
     progressTintInfo?.secondaryProgressTintList
 
-  fun setSecondaryProgressTintMode(tintMode: PorterDuff.Mode) {
+  fun setSecondaryProgressTintMode(tintMode: PorterDuff.Mode?) {
     if (progressTintInfo == null) {
       progressTintInfo = ProgressTintInfo()
     }

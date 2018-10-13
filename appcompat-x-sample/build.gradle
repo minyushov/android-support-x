@@ -17,5 +17,5 @@ dependencies {
   implementation project(":appcompat-x")
   implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
   implementation "androidx.appcompat:appcompat:$androidXVersion"
-  implementation "androidx.constraintlayout:constraintlayout:1.1.2"
+  implementation "androidx.constraintlayout:constraintlayout:1.1.3"
 }

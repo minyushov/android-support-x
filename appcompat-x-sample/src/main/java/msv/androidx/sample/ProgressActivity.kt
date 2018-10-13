@@ -9,10 +9,7 @@ import android.os.Looper
 import android.widget.ProgressBar
 import androidx.appcompat.app.AppCompatActivity
 import msv.androidx.appcompat.AppCompatX
-import msv.androidx.appcompat.widget.setSupportIndeterminateTintList
-import msv.androidx.appcompat.widget.setSupportProgressBackgroundTintList
-import msv.androidx.appcompat.widget.setSupportProgressTintList
-import msv.androidx.appcompat.widget.setSupportSecondaryProgressTintList
+import msv.androidx.appcompat.widget.ProgressBarCompat
 
 class ProgressActivity : AppCompatActivity() {
   private val handler = Handler(Looper.getMainLooper())
@@ -28,14 +25,14 @@ class ProgressActivity : AppCompatActivity() {
     setContentView(R.layout.a_progress)
 
     val progressBarIndeterminate = findViewById<ProgressBar>(R.id.progress_bar_indeterminate)
-    progressBarIndeterminate.setSupportIndeterminateTintList(ColorStateList.valueOf(Color.RED))
+    ProgressBarCompat.setIndeterminateTintList(progressBarIndeterminate, ColorStateList.valueOf(Color.RED))
 
     val progressBar1 = findViewById<ProgressBar>(R.id.progress_bar_1)
 
     val progressBar2 = findViewById<ProgressBar>(R.id.progress_bar_2)
-    progressBar2.setSupportProgressTintList(ColorStateList.valueOf(Color.GREEN))
-    progressBar2.setSupportProgressBackgroundTintList(ColorStateList.valueOf(Color.BLUE))
-    progressBar2.setSupportSecondaryProgressTintList(ColorStateList.valueOf(Color.RED))
+    ProgressBarCompat.setProgressTintList(progressBar2, ColorStateList.valueOf(Color.GREEN))
+    ProgressBarCompat.setProgressBackgroundTintList(progressBar2, ColorStateList.valueOf(Color.BLUE))
+    ProgressBarCompat.setSecondaryProgressTintList(progressBar2, ColorStateList.valueOf(Color.RED))
 
     val progressBar3 = findViewById<ProgressBar>(R.id.progress_bar_3)
 

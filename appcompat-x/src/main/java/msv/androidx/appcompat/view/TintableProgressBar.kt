@@ -44,7 +44,7 @@ internal interface TintableProgressBar {
    * @see [getSupportIndeterminateTintMode]
    * @see [androidx.core.graphics.drawable.DrawableCompat.setTintMode]
    */
-  fun setSupportIndeterminateTintMode(tintMode: PorterDuff.Mode)
+  fun setSupportIndeterminateTintMode(tintMode: PorterDuff.Mode?)
 
   /**
    * Returns the blending mode used to apply the tint to the indeterminate
@@ -54,7 +54,7 @@ internal interface TintableProgressBar {
    *
    * @see [setSupportIndeterminateTintMode]
    */
-  fun getSupportIndeterminateTintMode(): PorterDuff.Mode
+  fun getSupportIndeterminateTintMode(): PorterDuff.Mode?
 
   /**
    * Applies a tint to the progress indicator, if one exists, or to the
@@ -98,7 +98,7 @@ internal interface TintableProgressBar {
    * @see [getSupportProgressTintMode]
    * @see [androidx.core.graphics.drawable.DrawableCompat.setTintMode]
    */
-  fun setSupportProgressTintMode(tintMode: PorterDuff.Mode)
+  fun setSupportProgressTintMode(tintMode: PorterDuff.Mode?)
 
   /**
    * Returns the blending mode used to apply the tint to the progress
@@ -108,7 +108,7 @@ internal interface TintableProgressBar {
    *
    * @see [setSupportProgressTintMode]
    */
-  fun getSupportProgressTintMode(): PorterDuff.Mode
+  fun getSupportProgressTintMode(): PorterDuff.Mode?
 
   /**
    * Applies a tint to the progress background, if one exists. Does not modify the
@@ -150,13 +150,13 @@ internal interface TintableProgressBar {
    * @see [getSupportIndeterminateTintMode]
    * @see [androidx.core.graphics.drawable.DrawableCompat.setTintMode]
    */
-  fun setSupportProgressBackgroundTintMode(tintMode: PorterDuff.Mode)
+  fun setSupportProgressBackgroundTintMode(tintMode: PorterDuff.Mode?)
 
   /**
    * @return the blending mode used to apply the tint to the progress background
    * @see [setSupportProgressBackgroundTintMode]
    */
-  fun getSupportProgressBackgroundTintMode(): PorterDuff.Mode
+  fun getSupportProgressBackgroundTintMode(): PorterDuff.Mode?
 
   /**
    * Applies a tint to the secondary progress indicator, if one exists.
@@ -200,7 +200,7 @@ internal interface TintableProgressBar {
    * @see [getSupportSecondaryProgressTintMode]
    * @see @see [androidx.core.graphics.drawable.DrawableCompat.setTintMode]
    */
-  fun setSupportSecondaryProgressTintMode(tintMode: PorterDuff.Mode)
+  fun setSupportSecondaryProgressTintMode(tintMode: PorterDuff.Mode?)
 
   /**
    * Returns the blending mode used to apply the tint to the secondary
@@ -210,5 +210,5 @@ internal interface TintableProgressBar {
    *
    * @see [setSupportSecondaryProgressTintMode]
    */
-  fun getSupportSecondaryProgressTintMode(): PorterDuff.Mode
+  fun getSupportSecondaryProgressTintMode(): PorterDuff.Mode?
 }

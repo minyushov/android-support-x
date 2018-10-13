@@ -26,10 +26,10 @@ internal open class CompoundDrawableHelper(private val view: TextView) {
       .obtainStyledAttributes(view.context, attrs, R.styleable.CompoundDrawableHelper, defStyleAttr, 0)
       .use {
         findValue(R.styleable.CompoundDrawableHelper_drawableTint) {
-          view.setSupportCompoundDrawableTintList(getColorStateList(it))
+          CompoundDrawableCompat.setCompoundDrawableTintList(view, getColorStateList(it))
         }
         findValue(R.styleable.CompoundDrawableHelper_drawableTintMode) {
-          view.setSupportCompoundDrawableTintMode(DrawableUtils.parseTintMode(getInt(it, -1), DEFAULT_TINT_MODE))
+          CompoundDrawableCompat.setCompoundDrawableTintMode(view, DrawableUtils.parseTintMode(getInt(it, -1), DEFAULT_TINT_MODE))
         }
       }
   }
