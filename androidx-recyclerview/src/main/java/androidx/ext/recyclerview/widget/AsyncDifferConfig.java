@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 The Android Open Source Project
+ * Copyright 2018 The Android Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,17 +16,15 @@
 
 package androidx.ext.recyclerview.widget;
 
-import android.os.Handler;
-import android.os.Looper;
-
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.annotation.RestrictTo;
 
 /**
- * Configuration object for {@link ListAdapter}, {@link androidx.recyclerview.widget.AsyncListDiffer}, and similar
+ * Configuration object for {@link ListAdapter}, {@link AsyncListDiffer}, and similar
  * background-thread list diffing adapter logic.
  * <p>
  * At minimum, defines item diffing behavior with a {@link DiffUtil.ItemCallback}, used to compute
@@ -35,15 +33,16 @@ import androidx.annotation.RestrictTo;
  * @param <T> Type of items in the lists, and being compared.
  */
 public final class AsyncDifferConfig<T> {
-    @NonNull
+    @Nullable
     private final Executor mMainThreadExecutor;
     @NonNull
     private final Executor mBackgroundThreadExecutor;
     @NonNull
     private final DiffUtil.ItemCallback<T> mDiffCallback;
 
-    private AsyncDifferConfig(
-            @NonNull Executor mainThreadExecutor,
+    @SuppressWarnings("WeakerAccess") /* synthetic access */
+    AsyncDifferConfig(
+            @Nullable Executor mainThreadExecutor,
             @NonNull Executor backgroundThreadExecutor,
             @NonNull DiffUtil.ItemCallback<T> diffCallback) {
         mMainThreadExecutor = mainThreadExecutor;
@@ -54,7 +53,7 @@ public final class AsyncDifferConfig<T> {
     /** @hide */
     @SuppressWarnings("WeakerAccess")
     @RestrictTo(RestrictTo.Scope.LIBRARY_GROUP)
-    @NonNull
+    @Nullable
     public Executor getMainThreadExecutor() {
         return mMainThreadExecutor;
     }
@@ -77,6 +76,7 @@ public final class AsyncDifferConfig<T> {
      * @param <T>
      */
     public static final class Builder<T> {
+        @Nullable
         private Executor mMainThreadExecutor;
         private Executor mBackgroundThreadExecutor;
         private final DiffUtil.ItemCallback<T> mDiffCallback;
@@ -119,14 +119,6 @@ public final class AsyncDifferConfig<T> {
             return this;
         }
 
-        private static class MainThreadExecutor implements Executor {
-            final Handler mHandler = new Handler(Looper.getMainLooper());
-            @Override
-            public void execute(@NonNull Runnable command) {
-                mHandler.post(command);
-            }
-        }
-
         /**
          * Creates a {@link AsyncListDiffer} with the given parameters.
          *
@@ -134,9 +126,6 @@ public final class AsyncDifferConfig<T> {
          */
         @NonNull
         public AsyncDifferConfig<T> build() {
-            if (mMainThreadExecutor == null) {
-                mMainThreadExecutor = sMainThreadExecutor;
-            }
             if (mBackgroundThreadExecutor == null) {
                 synchronized (sExecutorLock) {
                     if (sDiffExecutor == null) {
@@ -154,8 +143,5 @@ public final class AsyncDifferConfig<T> {
         // TODO: remove the below once supportlib has its own appropriate executors
         private static final Object sExecutorLock = new Object();
         private static Executor sDiffExecutor = null;
-
-        // TODO: use MainThreadExecutor from supportlib once one exists
-        private static final Executor sMainThreadExecutor = new MainThreadExecutor();
     }
 }
