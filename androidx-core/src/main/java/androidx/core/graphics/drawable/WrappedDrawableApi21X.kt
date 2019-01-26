@@ -7,10 +7,10 @@ import androidx.annotation.RequiresApi
 
 @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
 internal class WrappedDrawableApi21X(drawable: Drawable) : WrappedDrawableApi21(drawable) {
-  override fun isCompatTintEnabled(): Boolean {
+  override fun isCompatTintEnabled() =
     if (Build.VERSION.SDK_INT == 21) {
-      return super.isCompatTintEnabled() || mDrawable is ScaleDrawable
+      super.isCompatTintEnabled() || mDrawable is ScaleDrawable
+    } else {
+      super.isCompatTintEnabled()
     }
-    return false
-  }
 }
