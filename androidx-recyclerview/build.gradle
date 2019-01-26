@@ -10,13 +10,15 @@ android {
   }
 
   libraryVariants.all {
-    it.generateBuildConfig.enabled = false
+    it.generateBuildConfigProvider.configure {
+      it.enabled = false
+    }
   }
 }
 
 dependencies {
-  api "androidx.recyclerview:recyclerview:$androidXVersion"
-  testImplementation "androidx.test:rules:1.1.0-beta02"
+  api "androidx.recyclerview:recyclerview:1.0.0"
+  testImplementation "androidx.test:rules:1.1.1"
   testImplementation "junit:junit:4.12"
 }
 

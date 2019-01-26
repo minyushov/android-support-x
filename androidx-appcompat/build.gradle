@@ -11,14 +11,16 @@ android {
   }
 
   libraryVariants.all {
-    it.generateBuildConfig.enabled = false
+    it.generateBuildConfigProvider.configure {
+      it.enabled = false
+    }
   }
 }
 
 dependencies {
   api project(':androidx-core')
-  api "com.minyushov.android:inflater:1.1.0"
-  api "androidx.appcompat:appcompat:$androidXVersion"
+  api "com.minyushov.android:inflater:1.1.1"
+  api "androidx.appcompat:appcompat:1.0.2"
   implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
 }
 

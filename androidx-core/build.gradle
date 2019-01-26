@@ -11,12 +11,14 @@ android {
   }
 
   libraryVariants.all {
-    it.generateBuildConfig.enabled = false
+    it.generateBuildConfigProvider.configure {
+      it.enabled = false
+    }
   }
 }
 
 dependencies {
-  api "androidx.core:core:$androidXVersion"
+  api "androidx.core:core:1.0.1"
   implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
 }
 
