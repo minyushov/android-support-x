@@ -28,7 +28,7 @@ bintrayUpload {
   artifactId = "appcompat"
   repo = libraryRepo
   groupId = libraryGroupId
-  version = libraryVersion
+  version = "1.1.0-alpha01"
   vcsUrl = libraryVcsUrl
   license = libraryLicense
   docs = false
