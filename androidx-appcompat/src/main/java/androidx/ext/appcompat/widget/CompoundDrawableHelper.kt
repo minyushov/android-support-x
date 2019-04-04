@@ -20,15 +20,15 @@ internal open class CompoundDrawableHelper(private val view: TextView) {
 
   private var drawableTint: TintInfo? = null
 
-  @SuppressLint("RestrictedApi")
+  @SuppressLint("PrivateResource")
   fun loadFromAttributes(attrs: AttributeSet?, defStyleAttr: Int) {
     TintTypedArray
-      .obtainStyledAttributes(view.context, attrs, R.styleable.CompoundDrawableHelper, defStyleAttr, 0)
+      .obtainStyledAttributes(view.context, attrs, R.styleable.AppCompatTextView, defStyleAttr, 0)
       .use {
-        findValue(R.styleable.CompoundDrawableHelper_drawableTint) {
+        findValue(R.styleable.AppCompatTextView_drawableTint) {
           CompoundDrawableCompat.setCompoundDrawableTintList(view, getColorStateList(it))
         }
-        findValue(R.styleable.CompoundDrawableHelper_drawableTintMode) {
+        findValue(R.styleable.AppCompatTextView_drawableTintMode) {
           CompoundDrawableCompat.setCompoundDrawableTintMode(view, DrawableUtils.parseTintMode(getInt(it, -1), DEFAULT_TINT_MODE))
         }
       }
