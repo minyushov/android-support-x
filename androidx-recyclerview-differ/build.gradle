@@ -7,6 +7,6 @@ dependencies {
 }
 
 bintrayUpload {
-  artifactId = "recyclerview"
-  version = "2.0.0"
+  artifactId = "recyclerview-differ"
+  version = "1.0.0"
 }
