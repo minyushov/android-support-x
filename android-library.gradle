@@ -1,0 +1,28 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'com.minyushov.bintray'
+
+android {
+  compileSdkVersion androidCompileSdkVersion
+
+  defaultConfig {
+    minSdkVersion androidMinSdkVersion
+    targetSdkVersion androidTargetSdkVersion
+    vectorDrawables.useSupportLibrary = true
+  }
+
+  libraryVariants.all {
+    it.generateBuildConfigProvider.configure {
+      it.enabled = false
+    }
+  }
+}
+
+bintrayUpload {
+  repo = libraryRepo
+  groupId = libraryGroupId
+  vcsUrl = libraryVcsUrl
+  license = libraryLicense
+  docs = false
+  dryRun = false
+}
