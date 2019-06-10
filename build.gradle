@@ -3,7 +3,7 @@ buildscript {
 
   ext {
     libraryRepo = "androidx"
-    libraryGroupId = "com.minyushov.android"
+    libraryGroupId = "com.minyushov.androidx"
     libraryVcsUrl = "https://github.com/minyushov/android-support-x.git"
     libraryLicense = "Apache-2.0"
   }
