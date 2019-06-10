@@ -1,0 +1,10 @@
+apply from: "${rootDir}/android-library.gradle"
+
+dependencies {
+  api androidRecyclerView
+}
+
+bintrayUpload {
+  artifactId = "recyclerview-ktx"
+  version = "1.0.0-alpha01"
+}

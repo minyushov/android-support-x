@@ -11,4 +11,6 @@ ext {
   androidRecyclerView = "androidx.recyclerview:recyclerview:1.0.0"
   androidAppcompat = "androidx.appcompat:appcompat:1.1.0-beta01"
   androidAnnotation = "androidx.annotation:annotation:1.1.0"
+
+  material = "com.google.android.material:material:1.1.0-alpha07"
 }
