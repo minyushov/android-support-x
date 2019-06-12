@@ -12,7 +12,7 @@ dependencies {
 
 ```groovy
 dependencies {
-  implementation 'com.minyushov.androidx:recyclerview-ktx:1.0.0-alpha01'
+  implementation 'com.minyushov.androidx:recyclerview-ktx:version'
 }
 ```
 
@@ -21,7 +21,7 @@ dependencies {
 
 ```groovy
 dependencies {
-  implementation 'com.minyushov.androidx:recyclerview-differ:1.0.0'
+  implementation 'com.minyushov.androidx:recyclerview-differ:version'
 }
 ```
 
