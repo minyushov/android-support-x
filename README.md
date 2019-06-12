@@ -1,5 +1,5 @@
 ### core-ktx
-[![Download](https://api.bintray.com/packages/minyushov/androidx/core-ktx/images/download.svg?version=latest)](https://bintray.com/minyushov/androidx/core-ktx/1.0.0-alpha01/link)
+[![Download](https://api.bintray.com/packages/minyushov/androidx/core-ktx/images/download.svg)](https://bintray.com/minyushov/androidx/core-ktx/_latestVersion)
 
 ```groovy
 dependencies {
@@ -8,7 +8,7 @@ dependencies {
 ```
 
 ### recyclerview-ktx
-[![Download](https://api.bintray.com/packages/minyushov/androidx/recyclerview-ktx/images/download.svg?version=latest)](https://bintray.com/minyushov/androidx/recyclerview-ktx/1.0.0-alpha01/link)
+[![Download](https://api.bintray.com/packages/minyushov/androidx/recyclerview-ktx/images/download.svg)](https://bintray.com/minyushov/androidx/recyclerview-ktx/_latestVersion)
 
 ```groovy
 dependencies {
@@ -17,7 +17,7 @@ dependencies {
 ```
 
 ### recyclerview-differ
-[![Download](https://api.bintray.com/packages/minyushov/androidx/recyclerview-differ/images/download.svg?version=latest)](https://bintray.com/minyushov/androidx/recyclerview-differ/1.0.0/link)
+[![Download](https://api.bintray.com/packages/minyushov/androidx/recyclerview-differ/images/download.svg)](https://bintray.com/minyushov/androidx/recyclerview-differ/_latestVersion)
 
 ```groovy
 dependencies {
