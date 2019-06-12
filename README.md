@@ -1,17 +1,28 @@
-### Setting up the dependency
-```groovy
-repositories {
-  maven {
-    url  "http://dl.bintray.com/minyushov/androidx"
-  }
-}
-```
+### core-ktx
+[![Download](https://api.bintray.com/packages/minyushov/androidx/core-ktx/images/download.svg?version=latest)](https://bintray.com/minyushov/androidx/core-ktx/1.0.0-alpha01/link)
+
 ```groovy
 dependencies {
-  implementation 'androidx.ext:core:version'
-  implementation 'androidx.ext:recyclerview:version'
-  implementation 'androidx.ext:appcompat:version'
+  implementation 'com.minyushov.androidx:core-ktx:version'
 }
 ```
 
-Please replace `version` with the latest version: [![Download](https://api.bintray.com/packages/minyushov/androidx/core/images/download.svg)](https://bintray.com/minyushov/androidx/core/_latestVersion)
+### recyclerview-ktx
+[![Download](https://api.bintray.com/packages/minyushov/androidx/recyclerview-ktx/images/download.svg?version=latest)](https://bintray.com/minyushov/androidx/recyclerview-ktx/1.0.0-alpha01/link)
+
+```groovy
+dependencies {
+  implementation 'com.minyushov.androidx:recyclerview-ktx:1.0.0-alpha01'
+}
+```
+
+### recyclerview-differ
+[![Download](https://api.bintray.com/packages/minyushov/androidx/recyclerview-differ/images/download.svg?version=latest)](https://bintray.com/minyushov/androidx/recyclerview-differ/1.0.0/link)
+
+```groovy
+dependencies {
+  implementation 'com.minyushov.androidx:recyclerview-differ:1.0.0'
+}
+```
+
+[DiffUtil](https://developer.android.com/reference/androidx/recyclerview/widget/DiffUtil.html) with workaround for https://issuetracker.google.com/issues/123376278
