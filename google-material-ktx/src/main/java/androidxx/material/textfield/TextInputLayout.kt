@@ -16,6 +16,7 @@ inline fun TextInputLayout.updateEndIconMode(@TextInputLayout.EndIconMode endIco
 
 inline fun TextInputLayout.updateError(error: CharSequence?) {
   if (error != this.error) {
+    this.isErrorEnabled = false
     this.error = error
   }
 }
