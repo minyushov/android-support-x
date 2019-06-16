@@ -12,6 +12,10 @@ android {
     vectorDrawables.useSupportLibrary = true
   }
 
+  compileOptions {
+    kotlinOptions.freeCompilerArgs += ['-module-name', "$libraryGroupId.$libraryArtifactId"]
+  }
+
   libraryVariants.all {
     it.generateBuildConfigProvider.configure {
       it.enabled = false
