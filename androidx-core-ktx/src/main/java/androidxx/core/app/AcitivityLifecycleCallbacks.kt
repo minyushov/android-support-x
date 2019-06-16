@@ -6,31 +6,38 @@ import android.os.Bundle
 
 inline fun Application.onActivityCreated(
   crossinline onActivityCreated: (activity: Activity, savedInstanceState: Bundle?) -> Unit
-) = registerActivityLifecycleCallbacks(onActivityCreated = onActivityCreated)
+): Application.ActivityLifecycleCallbacks =
+  registerActivityLifecycleCallbacks(onActivityCreated = onActivityCreated)
 
 inline fun Application.onActivityStarted(
   crossinline onActivityStarted: (activity: Activity) -> Unit
-) = registerActivityLifecycleCallbacks(onActivityStarted = onActivityStarted)
+): Application.ActivityLifecycleCallbacks =
+  registerActivityLifecycleCallbacks(onActivityStarted = onActivityStarted)
 
 inline fun Application.onActivityResumed(
   crossinline onActivityResumed: (activity: Activity) -> Unit
-) = registerActivityLifecycleCallbacks(onActivityResumed = onActivityResumed)
+): Application.ActivityLifecycleCallbacks =
+  registerActivityLifecycleCallbacks(onActivityResumed = onActivityResumed)
 
 inline fun Application.onActivityPaused(
   crossinline onActivityPaused: (activity: Activity) -> Unit
-) = registerActivityLifecycleCallbacks(onActivityPaused = onActivityPaused)
+): Application.ActivityLifecycleCallbacks =
+  registerActivityLifecycleCallbacks(onActivityPaused = onActivityPaused)
 
 inline fun Application.onActivityStopped(
   crossinline onActivityStopped: (activity: Activity) -> Unit
-) = registerActivityLifecycleCallbacks(onActivityStopped = onActivityStopped)
+): Application.ActivityLifecycleCallbacks =
+  registerActivityLifecycleCallbacks(onActivityStopped = onActivityStopped)
 
 inline fun Application.onActivitySaveInstanceState(
   crossinline onActivitySaveInstanceState: (activity: Activity, outState: Bundle?) -> Unit
-) = registerActivityLifecycleCallbacks(onActivitySaveInstanceState = onActivitySaveInstanceState)
+): Application.ActivityLifecycleCallbacks =
+  registerActivityLifecycleCallbacks(onActivitySaveInstanceState = onActivitySaveInstanceState)
 
 inline fun Application.onActivityDestroyed(
   crossinline onActivityDestroyed: (activity: Activity) -> Unit
-) = registerActivityLifecycleCallbacks(onActivityDestroyed = onActivityDestroyed)
+): Application.ActivityLifecycleCallbacks =
+  registerActivityLifecycleCallbacks(onActivityDestroyed = onActivityDestroyed)
 
 inline fun Application.registerActivityLifecycleCallbacks(
   crossinline onActivityCreated: (activity: Activity, savedInstanceState: Bundle?) -> Unit = { _, _ -> },

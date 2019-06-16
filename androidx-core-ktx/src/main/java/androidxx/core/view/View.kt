@@ -17,6 +17,6 @@ inline fun View.setBackgroundTintCompat(@ColorInt color: Int) =
 inline fun View.setBackgroundTintCompat(tint: ColorStateList?) =
   ViewCompat.setBackgroundTintList(this, tint)
 
-inline var View.elevationCompat
+inline var View.elevationCompat: Float
   get() = ViewCompat.getElevation(this)
   set(value) = ViewCompat.setElevation(this, value)

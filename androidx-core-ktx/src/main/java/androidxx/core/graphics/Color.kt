@@ -10,5 +10,5 @@ import androidx.core.graphics.ColorUtils
 inline fun @receiver:ColorInt Int.withAlpha(@IntRange(from = 0x0, to = 0xFF) alpha: Int): Int =
   ColorUtils.setAlphaComponent(this, alpha)
 
-inline fun @receiver:ColorInt Int.toStateList() =
+inline fun @receiver:ColorInt Int.toStateList(): ColorStateList =
   ColorStateList.valueOf(this)
