@@ -8,6 +8,7 @@ android {
   defaultConfig {
     minSdkVersion androidMinSdkVersion
     targetSdkVersion androidTargetSdkVersion
+    testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     vectorDrawables.useSupportLibrary = true
   }
 
@@ -21,6 +22,8 @@ android {
 bintrayUpload {
   repo = libraryRepo
   groupId = libraryGroupId
+  artifactId = libraryArtifactId
+  version = libraryVersion
   vcsUrl = libraryVcsUrl
   license = libraryLicense
   docs = false

@@ -4,8 +4,3 @@ dependencies {
   api androidCore
   implementation kotlinLib
 }
-
-bintrayUpload {
-  artifactId = "core"
-  version = "1.0.0-alpha01"
-}

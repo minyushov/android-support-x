@@ -5,8 +5,3 @@ dependencies {
   testImplementation "androidx.test:rules:1.2.0"
   testImplementation "junit:junit:4.12"
 }
-
-bintrayUpload {
-  artifactId = "recyclerview-differ"
-  version = "1.0.0"
-}

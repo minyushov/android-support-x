@@ -1,12 +1,12 @@
+ext {
+  libraryArtifactId = "appcompat"
+  libraryVersion = "1.0.0-alpha01"
+}
+
 apply from: "${rootDir}/android-library.gradle"
 
 dependencies {
   api project(':androidx-core')
   api androidAppcompat
   implementation kotlinLib
-}
-
-bintrayUpload {
-  artifactId = "appcompat"
-  version = "1.0.0-alpha01"
 }

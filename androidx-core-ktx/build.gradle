@@ -2,11 +2,10 @@ apply from: "${rootDir}/android-library.gradle"
 
 dependencies {
   api androidCoreKtx
+
   implementation kotlinLib
   implementation androidAnnotation
-}
 
-bintrayUpload {
-  artifactId = "core-ktx"
-  version = "1.0.0-alpha01"
+  androidTestImplementation testRunner
+  androidTestImplementation junit
 }
