@@ -29,7 +29,7 @@ inline fun ViewGroup.first(predicate: (View) -> Boolean): View {
 /**
  * Returns the first child view, or `null` if this view group contains no views.
  */
-fun ViewGroup.firstOrNull(): View? {
+inline fun ViewGroup.firstOrNull(): View? {
   return if (childCount == 0) null else getChildAt(0)
 }
 
