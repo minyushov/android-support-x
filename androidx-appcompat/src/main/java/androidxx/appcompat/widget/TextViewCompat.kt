@@ -10,6 +10,7 @@ import androidxx.appcompat.view.TintableCompoundDrawableView
 
 // Compound drawable tint is supported by the framework since API 23,
 // but it's not working for relative compound drawables (drawableStart, drawableEnd)
+// https://issuetracker.google.com/issues/129907900
 
 var TextView.compoundDrawableTintCompat: ColorStateList?
   @JvmName("setCompoundDrawableTintList")

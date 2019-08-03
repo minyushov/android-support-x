@@ -2,10 +2,14 @@
 
 package androidxx.core.view
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.LayoutRes
+
+inline val Context.inflater: LayoutInflater
+  get() = LayoutInflater.from(this)
 
 @Suppress("UNCHECKED_CAST")
 inline fun <T : View> LayoutInflater.inflateView(

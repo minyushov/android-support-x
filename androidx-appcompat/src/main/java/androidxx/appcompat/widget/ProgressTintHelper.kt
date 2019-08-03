@@ -5,13 +5,14 @@ import android.content.res.ColorStateList
 import android.graphics.PorterDuff
 import android.graphics.drawable.Drawable
 import android.graphics.drawable.LayerDrawable
+import android.os.Build
 import android.util.AttributeSet
 import android.widget.ProgressBar
 import androidx.appcompat.widget.DrawableUtils
 import androidx.appcompat.widget.TintTypedArray
 import androidx.core.graphics.drawable.DrawableCompat
+import androidx.core.graphics.drawable.TintAwareDrawable
 import androidxx.appcompat.R
-import androidxx.core.graphics.drawable.wrap
 
 internal class ProgressTintHelper(private val view: ProgressBar) {
   companion object {
@@ -329,3 +330,16 @@ internal class ProgressTintHelper(private val view: ProgressBar) {
     var hasSecondaryProgressTintMode: Boolean = false
   }
 }
+
+private fun Drawable.wrap(): Drawable =
+  when {
+    Build.VERSION.SDK_INT >= 23 -> DrawableCompat.wrap(this)
+    Build.VERSION.SDK_INT >= 21 -> {
+      if (this !is TintAwareDrawable) {
+        androidx.core.graphics.drawable.WrappedDrawableApi21X(this)
+      } else {
+        this
+      }
+    }
+    else -> DrawableCompat.wrap(this)
+  }

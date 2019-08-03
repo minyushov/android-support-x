@@ -1,5 +1,6 @@
 package androidxx.appcompat.widget
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.res.ColorStateList
 import android.graphics.PorterDuff
@@ -8,6 +9,7 @@ import android.widget.ProgressBar
 import androidx.appcompat.widget.TintContextWrapper
 import androidxx.appcompat.view.TintableProgressBar
 
+@SuppressLint("RestrictedApi")
 open class AppCompatProgressBar
 @JvmOverloads
 constructor(

@@ -12,6 +12,7 @@ import androidx.appcompat.widget.TintTypedArray
 import androidx.core.graphics.drawable.DrawableCompat
 import androidxx.appcompat.R
 
+@SuppressLint("RestrictedApi")
 internal open class CompoundDrawableHelper(
   private val view: TextView
 ) {
