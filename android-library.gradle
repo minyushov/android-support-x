@@ -8,8 +8,8 @@ android {
   defaultConfig {
     minSdkVersion androidMinSdkVersion
     targetSdkVersion androidTargetSdkVersion
-    testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     vectorDrawables.useSupportLibrary = true
+    testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
   }
 
   compileOptions {
@@ -20,6 +20,16 @@ android {
     it.generateBuildConfigProvider.configure {
       it.enabled = false
     }
+  }
+
+  testOptions {
+    unitTests {
+      includeAndroidResources = true
+    }
+  }
+
+  packagingOptions {
+    exclude 'META-INF/LICENSE*'
   }
 }
 
