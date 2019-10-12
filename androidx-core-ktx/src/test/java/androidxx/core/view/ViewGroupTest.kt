@@ -1,5 +1,6 @@
 package androidxx.core.view
 
+import android.content.Context
 import android.os.Build
 import android.view.View
 import android.widget.LinearLayout
@@ -17,7 +18,7 @@ import org.robolectric.annotation.Config
 @Config(sdk = [Build.VERSION_CODES.P])
 class ViewGroupTest {
 
-  private val context = ApplicationProvider.getApplicationContext() as android.content.Context
+  private val context: Context = ApplicationProvider.getApplicationContext()
   private val viewGroup = LinearLayout(context)
 
   @Test

@@ -8,7 +8,10 @@ dependencies {
 
   testRuntimeOnly junitEngine
   testImplementation junitApi
-  testImplementation testRunner
   testImplementation testCore
+  testImplementation testRunner
   testImplementation robolectric
+  testImplementation mockito
+  testImplementation mockitoKtx
+  testImplementation project(":test-utils")
 }

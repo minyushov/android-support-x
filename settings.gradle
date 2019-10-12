@@ -6,3 +6,4 @@ include ':androidx-recyclerview-differ'
 include ':androidx-recyclerview-ktx'
 
 include ':google-material-ktx'
+include ':test-utils'

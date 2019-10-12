@@ -1,0 +1,11 @@
+<manifest
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  package="androidxx.testutils">
+
+  <application>
+
+    <activity android:name="androidxx.testutils.TestActivity" />
+
+  </application>
+
+</manifest>
