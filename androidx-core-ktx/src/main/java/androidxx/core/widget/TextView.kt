@@ -3,6 +3,7 @@
 package androidxx.core.widget
 
 import android.graphics.drawable.Drawable
+import android.view.inputmethod.EditorInfo
 import android.widget.TextView
 import androidx.annotation.DrawableRes
 
@@ -47,3 +48,20 @@ inline fun TextView.replaceCompoundDrawablesRelativeWithIntrinsicBounds(
   @DrawableRes end: Int = 0,
   @DrawableRes bottom: Int = 0
 ) = setCompoundDrawablesRelativeWithIntrinsicBounds(start, top, end, bottom)
+
+
+inline fun TextView.onImeAction(imeActionId: Int, crossinline action: () -> Unit): TextView.OnEditorActionListener {
+  val listener = TextView.OnEditorActionListener { _, actionId, _ ->
+    if (imeActionId == actionId) {
+      action()
+      true
+    } else {
+      false
+    }
+  }
+  setOnEditorActionListener(listener)
+  return listener
+}
+
+inline fun TextView.onImeActionDone(crossinline action: () -> Unit): TextView.OnEditorActionListener =
+  onImeAction(EditorInfo.IME_ACTION_DONE, action)
