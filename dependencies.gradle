@@ -3,7 +3,7 @@ ext {
   androidCompileSdkVersion = 29
   androidTargetSdkVersion = 29
 
-  kotlinVersion = "1.3.50"
+  kotlinVersion = "1.3.61"
   kotlinLib = "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlinVersion"
 
   androidCore = "androidx.core:core:1.2.0-beta01"
