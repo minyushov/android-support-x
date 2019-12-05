@@ -22,7 +22,6 @@
     </activity>
 
     <activity android:name=".ProgressActivity" />
-    <activity android:name=".CompoundDrawableActivity" />
 
   </application>
 

@@ -12,10 +12,4 @@
     android:layout_height="wrap_content"
     android:text="Progress Bar" />
 
-  <Button
-    android:id="@+id/compound_drawable_compat_button"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="Compound Drawable" />
-
 </LinearLayout>

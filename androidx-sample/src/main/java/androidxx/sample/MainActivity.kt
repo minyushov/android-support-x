@@ -18,9 +18,5 @@ class MainActivity : AppCompatActivity() {
     findViewById<View>(R.id.progress_bar_compat_button).setOnClickListener {
       startActivity(Intent(this, ProgressActivity::class.java))
     }
-
-    findViewById<View>(R.id.compound_drawable_compat_button).setOnClickListener {
-      startActivity(Intent(this, CompoundDrawableActivity::class.java))
-    }
   }
 }
