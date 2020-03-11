@@ -8,13 +8,12 @@ import androidx.test.core.app.ApplicationProvider
 import org.junit.Assert.assertNull
 import org.junit.Assert.assertSame
 import org.junit.Test
-import org.junit.jupiter.api.assertThrows
 import org.junit.runner.RunWith
 import org.robolectric.RobolectricTestRunner
 import org.robolectric.annotation.Config
+import kotlin.test.assertFailsWith
 
 @RunWith(RobolectricTestRunner::class)
-// Switch to Q when https://github.com/robolectric/robolectric/issues/5207 is fixed
 @Config(sdk = [Build.VERSION_CODES.P])
 class ViewGroupTest {
 
@@ -23,7 +22,7 @@ class ViewGroupTest {
 
   @Test
   fun first() {
-    assertThrows<NoSuchElementException> { viewGroup.first() }
+    assertFailsWith(NoSuchElementException::class) { viewGroup.first() }
 
     val view = View(context)
     viewGroup.addView(view)
@@ -37,7 +36,7 @@ class ViewGroupTest {
     val view = View(context)
     viewGroup.addView(view)
 
-    assertThrows<NoSuchElementException> { viewGroup.first { it !== view } }
+    assertFailsWith(NoSuchElementException::class) { viewGroup.first { it !== view } }
     assertSame(view, viewGroup.first { it == view })
   }
 
@@ -63,7 +62,7 @@ class ViewGroupTest {
 
   @Test
   fun last() {
-    assertThrows<NoSuchElementException> { viewGroup.last() }
+    assertFailsWith(NoSuchElementException::class) { viewGroup.last() }
 
     val view = View(context)
     viewGroup.addView(View(context))
@@ -77,7 +76,7 @@ class ViewGroupTest {
     val view = View(context)
     viewGroup.addView(view)
 
-    assertThrows<NoSuchElementException> { viewGroup.last { it !== view } }
+    assertFailsWith(NoSuchElementException::class) { viewGroup.last { it !== view } }
     assertSame(view, viewGroup.last { it == view })
   }
 

@@ -4,6 +4,7 @@ apply plugin: 'com.minyushov.bintray'
 
 android {
   compileSdkVersion androidCompileSdkVersion
+  buildToolsVersion androidBuildToolsVersion
 
   defaultConfig {
     minSdkVersion androidMinSdkVersion
@@ -13,12 +14,6 @@ android {
 
   compileOptions {
     kotlinOptions.freeCompilerArgs += ['-module-name', "$libraryGroupId.$libraryArtifactId"]
-  }
-
-  libraryVariants.all {
-    it.generateBuildConfigProvider.configure {
-      it.enabled = false
-    }
   }
 
   testOptions {

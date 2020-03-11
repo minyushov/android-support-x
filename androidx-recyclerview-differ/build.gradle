@@ -2,6 +2,6 @@ apply from: "${rootDir}/android-library.gradle"
 
 dependencies {
   api androidRecyclerView
-  testImplementation "androidx.test:rules:1.2.0"
-  testImplementation "junit:junit:4.12"
+  testImplementation testRules
+  testImplementation junit
 }

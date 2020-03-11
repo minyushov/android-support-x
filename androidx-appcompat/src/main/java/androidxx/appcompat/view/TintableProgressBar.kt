@@ -5,8 +5,7 @@ import android.graphics.PorterDuff
 
 /**
  * Interface which allows a [ProgressBar][android.widget.ProgressBar] to receive progress drawable
- * tinting calls from [ProgressBarCompat][androidx.ext.appcompat.widget.ProgressBarCompat]
- * when running on API v20 devices or lower.
+ * tinting calls from compat extension functions when running on API v20 devices or lower.
  */
 internal interface TintableProgressBar {
   /**

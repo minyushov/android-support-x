@@ -27,7 +27,6 @@ import org.robolectric.RobolectricTestRunner
 import org.robolectric.annotation.Config
 
 @RunWith(RobolectricTestRunner::class)
-// Switch to Q when https://github.com/robolectric/robolectric/issues/5207 is fixed
 @Config(sdk = [Build.VERSION_CODES.P])
 class ApplicationTest {
 

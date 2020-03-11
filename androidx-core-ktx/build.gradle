@@ -6,10 +6,9 @@ dependencies {
   implementation kotlinLib
   implementation androidAnnotation
 
-  testRuntimeOnly junitEngine
-  testImplementation junitApi
+  testImplementation kotlinTest
+  testImplementation junit
   testImplementation testCore
-  testImplementation testRunner
   testImplementation robolectric
   testImplementation mockito
   testImplementation mockitoKtx
