@@ -12,10 +12,10 @@ inline val Int.dp: Int
   get() = toFloat().dp.toInt()
 
 inline val Float.sp: Float
-  get() = asTypedValue(TypedValue.COMPLEX_UNIT_SP)
+  get() = toTypedValue(TypedValue.COMPLEX_UNIT_SP)
 
 inline val Float.dp: Float
-  get() = asTypedValue(TypedValue.COMPLEX_UNIT_DIP)
+  get() = toTypedValue(TypedValue.COMPLEX_UNIT_DIP)
 
-inline fun Float.asTypedValue(unit: Int): Float =
+inline fun Float.toTypedValue(unit: Int): Float =
   TypedValue.applyDimension(unit, this, Resources.getSystem().displayMetrics)

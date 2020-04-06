@@ -18,8 +18,9 @@ android {
 dependencies {
   implementation project(':androidx-core')
   implementation project(':androidx-core-ktx')
-  implementation project(':androidx-appcompat')
-  implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
+
+  implementation kotlinLib
+  implementation androidAppcompat
+
   implementation "androidx.constraintlayout:constraintlayout:1.1.3"
-  implementation "com.minyushov.android:inflater:1.1.5"
 }

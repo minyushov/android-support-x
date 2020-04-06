@@ -7,8 +7,10 @@ import android.view.View
 import androidx.annotation.ColorInt
 import androidx.core.view.ViewCompat
 
-inline fun View.onLayout(crossinline action: (view: View) -> Unit) {
-  addOnLayoutChangeListener { view, _, _, _, _, _, _, _, _ -> action(view) }
+inline fun View.onLayout(crossinline action: (view: View) -> Unit): View.OnLayoutChangeListener {
+  val listener = View.OnLayoutChangeListener { view, _, _, _, _, _, _, _, _ -> action(view) }
+  addOnLayoutChangeListener(listener)
+  return listener
 }
 
 inline fun View.setBackgroundTintCompat(@ColorInt color: Int) =

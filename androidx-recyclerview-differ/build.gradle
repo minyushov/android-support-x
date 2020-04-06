@@ -1,7 +1,0 @@
-apply from: "${rootDir}/android-library.gradle"
-
-dependencies {
-  api androidRecyclerView
-  testImplementation testRules
-  testImplementation junit
-}
