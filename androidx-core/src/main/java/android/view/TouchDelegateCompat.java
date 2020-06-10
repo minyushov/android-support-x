@@ -35,7 +35,7 @@ import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
  * {@link android.view.View#onTouchEvent(MotionEvent)} to {@link #onTouchEvent(MotionEvent)}.
  * </p>
  */
-public class TouchDelegateCompat {
+public class TouchDelegateCompat extends TouchDelegate {
 
   /**
    * View that should receive forwarded touch events
@@ -94,6 +94,7 @@ public class TouchDelegateCompat {
    * @param delegateView The view that should receive motion events
    */
   public TouchDelegateCompat(Rect bounds, View delegateView) {
+    super(bounds, delegateView);
     mBounds = bounds;
 
     mSlop = ViewConfiguration.get(delegateView.getContext()).getScaledTouchSlop();
@@ -214,7 +215,7 @@ public class TouchDelegateCompat {
    * @return A TouchDelegateInfo.
    */
   @NonNull
-  public AccessibilityNodeInfoCompat.TouchDelegateInfoCompat getTouchDelegateInfo() {
+  public AccessibilityNodeInfoCompat.TouchDelegateInfoCompat getTouchDelegateInfoCompat() {
     if (mTouchDelegateInfo == null) {
       final ArrayMap<Region, View> targetMap = new ArrayMap<>(1);
       Rect bounds = mBounds;
