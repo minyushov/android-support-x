@@ -9,6 +9,7 @@ inline fun RecyclerView.doOnScrollStateChanged(
   ) -> Unit = { _, _ -> }
 ) = addOnScrollListener(onScrollStateChanged = onScrollStateChanged)
 
+
 inline fun RecyclerView.doOnScrolled(
   crossinline onScrolled: (
     recyclerView: RecyclerView,
@@ -16,6 +17,7 @@ inline fun RecyclerView.doOnScrolled(
     dy: Int
   ) -> Unit = { _, _, _ -> }
 ) = addOnScrollListener(onScrolled = onScrolled)
+
 
 inline fun RecyclerView.addOnScrollListener(
   crossinline onScrollStateChanged: (
@@ -37,4 +39,13 @@ inline fun RecyclerView.addOnScrollListener(
   }
   addOnScrollListener(listener)
   return listener
+}
+
+
+fun RecyclerView.clearDecorations() {
+  if (itemDecorationCount > 0) {
+    for (i in itemDecorationCount - 1 downTo 0) {
+      removeItemDecorationAt(i)
+    }
+  }
 }

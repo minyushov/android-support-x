@@ -15,8 +15,8 @@ buildscript {
 
   dependencies {
     classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
-    classpath "com.android.tools.build:gradle:4.0.0-beta03"
-    classpath "com.minyushov.gradle:bintray:2.0.0-alpha05"
+    classpath "com.android.tools.build:gradle:4.0.0"
+    classpath "com.minyushov.gradle:bintray:2.0.0"
   }
 }
 
