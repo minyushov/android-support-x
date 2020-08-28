@@ -2,7 +2,6 @@ package androidxx.core.view
 
 import android.app.Activity
 import android.app.Application
-import android.os.Build
 import android.os.Bundle
 import androidx.lifecycle.Lifecycle
 import androidx.test.core.app.ApplicationProvider.getApplicationContext
@@ -24,10 +23,8 @@ import com.nhaarman.mockitokotlin2.verifyNoMoreInteractions
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.robolectric.RobolectricTestRunner
-import org.robolectric.annotation.Config
 
 @RunWith(RobolectricTestRunner::class)
-@Config(sdk = [Build.VERSION_CODES.P])
 class ApplicationTest {
 
   private interface ActivityCallbackWithBundle : (Activity, Bundle?) -> Unit

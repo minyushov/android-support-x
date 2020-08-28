@@ -1,7 +1,6 @@
 package androidxx.core.view
 
 import android.content.Context
-import android.os.Build
 import android.view.View
 import android.widget.LinearLayout
 import androidx.test.core.app.ApplicationProvider
@@ -10,11 +9,9 @@ import org.junit.Assert.assertSame
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.robolectric.RobolectricTestRunner
-import org.robolectric.annotation.Config
 import kotlin.test.assertFailsWith
 
 @RunWith(RobolectricTestRunner::class)
-@Config(sdk = [Build.VERSION_CODES.P])
 class ViewGroupTest {
 
   private val context: Context = ApplicationProvider.getApplicationContext()

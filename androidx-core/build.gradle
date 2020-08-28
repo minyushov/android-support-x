@@ -1,6 +1,16 @@
 apply from: "${rootDir}/android-library.gradle"
 
 dependencies {
+  implementation kotlinCoroutines
+
+  implementation androidAnnotation
   implementation androidCore
-  implementation kotlinLib
+
+  testImplementation kotlinTest
+  testImplementation junit
+  testImplementation testCore
+  testImplementation robolectric
+  testImplementation mockito
+  testImplementation mockitoKtx
+  testImplementation project(":test-utils")
 }

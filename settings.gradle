@@ -1,6 +1,5 @@
 include ':androidx-sample'
 include ':androidx-core'
-include ':androidx-core-ktx'
 include ':androidx-recyclerview-ktx'
 
 include ':google-material-ktx'
