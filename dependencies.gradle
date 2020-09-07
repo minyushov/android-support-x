@@ -13,7 +13,7 @@ ext {
   androidAppcompat = "androidx.appcompat:appcompat:1.3.0-alpha02"
   androidAnnotation = "androidx.annotation:annotation:1.1.0"
 
-  material = "com.google.android.material:material:1.3.0-alpha0w"
+  material = "com.google.android.material:material:1.3.0-alpha02"
 
   testCore = "androidx.test:core-ktx:1.3.0"
   junit = "junit:junit:4.13"
