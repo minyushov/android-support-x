@@ -30,41 +30,43 @@ inline fun Context.getColorStateListCompat(@ColorRes color: Int): ColorStateList
   ContextCompat.getColorStateList(this, color)
     ?: throw NoSuchElementException("ColorStateList for id = $color not found")
 
-inline fun Context.getDisplayCompat(): Display? =
-  if (Build.VERSION.SDK_INT >= 30) {
-    display
-  } else {
-    @Suppress("DEPRECATION")
-    getSystemService<WindowManager>()?.defaultDisplay
+inline val Context.displayCompat: Display?
+  get() =
+    if (Build.VERSION.SDK_INT >= 30) {
+      display
+    } else {
+      @Suppress("DEPRECATION")
+      getSystemService<WindowManager>()?.defaultDisplay
+    }
+
+val Context.defaultDisplaySize: Size
+  get() {
+    val manager = getSystemService<WindowManager>()
+      ?: return Size(0, 0)
+
+    if (Build.VERSION.SDK_INT >= 30) {
+      val metrics = manager.currentWindowMetrics
+      val windowInsets = metrics.windowInsets
+
+      val insets = windowInsets.getInsetsIgnoringVisibility(
+        WindowInsets.Type.navigationBars() or WindowInsets.Type.displayCutout()
+      )
+
+      val insetsWidth = insets.right + insets.left
+      val insetsHeight = insets.top + insets.bottom
+
+      val bounds = metrics.bounds
+
+      return Size(
+        bounds.width() - insetsWidth,
+        bounds.height() - insetsHeight
+      )
+    } else {
+      @Suppress("DEPRECATION")
+      return Point()
+        .let { point ->
+          manager.defaultDisplay?.getSize(point)
+          Size(point.x, point.y)
+        }
+    }
   }
-
-fun Context.getDefaultDisplaySize(): Size {
-  val manager = getSystemService<WindowManager>()
-    ?: return Size(0, 0)
-
-  if (Build.VERSION.SDK_INT >= 30) {
-    val metrics = manager.currentWindowMetrics
-    val windowInsets = metrics.windowInsets
-
-    val insets = windowInsets.getInsetsIgnoringVisibility(
-      WindowInsets.Type.navigationBars() or WindowInsets.Type.displayCutout()
-    )
-
-    val insetsWidth = insets.right + insets.left
-    val insetsHeight = insets.top + insets.bottom
-
-    val bounds = metrics.bounds
-
-    return Size(
-      bounds.width() - insetsWidth,
-      bounds.height() - insetsHeight
-    )
-  } else {
-    @Suppress("DEPRECATION")
-    return Point()
-      .let { point ->
-        manager.defaultDisplay?.getSize(point)
-        Size(point.x, point.y)
-      }
-  }
-}

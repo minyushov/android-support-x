@@ -6,13 +6,23 @@ import android.content.res.ColorStateList
 import android.view.View
 import android.view.ViewTreeObserver
 import androidx.annotation.ColorInt
+import androidx.core.view.OnApplyWindowInsetsListener
 import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 import kotlinx.coroutines.suspendCancellableCoroutine
 import kotlin.coroutines.resume
 
 inline fun View.onLayout(crossinline action: (view: View) -> Unit): View.OnLayoutChangeListener {
   val listener = View.OnLayoutChangeListener { view, _, _, _, _, _, _, _, _ -> action(view) }
   addOnLayoutChangeListener(listener)
+  return listener
+}
+
+inline fun View.onApplyWindowInsets(
+  crossinline action: (insets: WindowInsetsCompat) -> WindowInsetsCompat
+): OnApplyWindowInsetsListener {
+  val listener = OnApplyWindowInsetsListener { _, insets -> action(insets) }
+  ViewCompat.setOnApplyWindowInsetsListener(this, listener)
   return listener
 }
 
