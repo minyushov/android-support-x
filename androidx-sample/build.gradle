@@ -20,5 +20,5 @@ dependencies {
 
   implementation androidAppcompat
 
-  implementation "androidx.constraintlayout:constraintlayout:2.0.1"
+  implementation "androidx.constraintlayout:constraintlayout:2.0.3"
 }
