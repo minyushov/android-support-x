@@ -6,6 +6,7 @@ import android.os.Bundle
 import androidx.lifecycle.Lifecycle
 import androidx.test.core.app.ApplicationProvider.getApplicationContext
 import androidx.test.core.app.launchActivity
+import androidxx.core.TestActivity
 import androidxx.core.app.onActivityCreated
 import androidxx.core.app.onActivityDestroyed
 import androidxx.core.app.onActivityPaused
@@ -13,7 +14,6 @@ import androidxx.core.app.onActivityResumed
 import androidxx.core.app.onActivitySaveInstanceState
 import androidxx.core.app.onActivityStarted
 import androidxx.core.app.onActivityStopped
-import androidxx.testutils.TestActivity
 import androidxx.testutils.withActivity
 import com.nhaarman.mockitokotlin2.any
 import com.nhaarman.mockitokotlin2.anyOrNull
@@ -92,5 +92,4 @@ class ApplicationTest {
       verifyNoMoreInteractions(onActivitySaveState)
     }
   }
-
 }

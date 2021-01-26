@@ -1,4 +1,4 @@
-package androidxx.testutils
+package androidxx.core
 
 import android.app.Activity
 
