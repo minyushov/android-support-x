@@ -16,13 +16,11 @@ dependencies {
 }
 ```
 
-### recyclerview-differ
-[![Download](https://api.bintray.com/packages/minyushov/androidx/recyclerview-differ/images/download.svg)](https://bintray.com/minyushov/androidx/recyclerview-differ/_latestVersion)
+### material-ktx
+[![Download](https://api.bintray.com/packages/minyushov/androidx/material-ktx/images/download.svg)](https://bintray.com/minyushov/androidx/material-ktx/_latestVersion)
 
 ```groovy
 dependencies {
-  implementation 'com.minyushov.androidx:recyclerview-differ:version'
+  implementation 'com.minyushov.androidx:material-ktx:version'
 }
 ```
-
-[DiffUtil](https://developer.android.com/reference/androidx/recyclerview/widget/DiffUtil.html) with workaround for https://issuetracker.google.com/issues/123376278
