@@ -50,7 +50,9 @@ suspend fun View.awaitNextLayout() = suspendCancellableCoroutine<Unit> { continu
       oldBottom: Int
     ) {
       view.removeOnLayoutChangeListener(this)
-      continuation.resume(Unit)
+      if (continuation.isActive) {
+        continuation.resume(Unit)
+      }
     }
   }
   continuation.invokeOnCancellation { removeOnLayoutChangeListener(listener) }
@@ -64,7 +66,9 @@ suspend fun View.awaitPreDraw() = suspendCancellableCoroutine<Unit> { continuati
     val listener = object : ViewTreeObserver.OnPreDrawListener {
       override fun onPreDraw(): Boolean {
         viewTreeObserver.removeOnPreDrawListener(this)
-        continuation.resume(Unit)
+        if (continuation.isActive) {
+          continuation.resume(Unit)
+        }
         return true
       }
     }
@@ -74,7 +78,11 @@ suspend fun View.awaitPreDraw() = suspendCancellableCoroutine<Unit> { continuati
 }
 
 suspend fun View.awaitAnimationFrame() = suspendCancellableCoroutine<Unit> { continuation ->
-  val runnable = Runnable { continuation.resume(Unit) }
+  val runnable = Runnable {
+    if (continuation.isActive) {
+      continuation.resume(Unit)
+    }
+  }
   continuation.invokeOnCancellation { removeCallbacks(runnable) }
   postOnAnimation(runnable)
 }
