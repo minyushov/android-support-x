@@ -4,32 +4,35 @@ package androidxx.material.tabs
 
 import com.google.android.material.tabs.TabLayout
 
-inline fun TabLayout.get(index: Int) =
+fun TabLayout.getTab(index: Int) =
   getTabAt(index) ?: throw IndexOutOfBoundsException("Index: $index, Size: $tabCount")
 
-inline fun TabLayout.forEach(action: (tab: TabLayout.Tab) -> Unit) {
+inline fun TabLayout.forEachTab(action: (tab: TabLayout.Tab) -> Unit) {
   for (index in 0 until tabCount) {
-    action(get(index))
+    action(getTab(index))
   }
 }
 
-inline fun TabLayout.forEachIndexed(action: (index: Int, tab: TabLayout.Tab) -> Unit) {
+inline fun TabLayout.forEachTabIndexed(action: (index: Int, tab: TabLayout.Tab) -> Unit) {
   for (index in 0 until tabCount) {
-    action(index, get(index))
+    action(index, getTab(index))
   }
 }
 
 inline fun TabLayout.onTabSelected(
   crossinline onTabSelected: (tab: TabLayout.Tab) -> Unit = { _ -> }
-) = addOnTabSelectedListener(onTabSelected = onTabSelected)
+): TabLayout.OnTabSelectedListener =
+  addOnTabSelectedListener(onTabSelected = onTabSelected)
 
 inline fun TabLayout.onTabUnselected(
   crossinline onTabUnselected: (tab: TabLayout.Tab) -> Unit = { _ -> }
-) = addOnTabSelectedListener(onTabUnselected = onTabUnselected)
+): TabLayout.OnTabSelectedListener =
+  addOnTabSelectedListener(onTabUnselected = onTabUnselected)
 
 inline fun TabLayout.onTabReselected(
   crossinline onTabReselected: (tab: TabLayout.Tab) -> Unit = { _ -> }
-) = addOnTabSelectedListener(onTabReselected = onTabReselected)
+): TabLayout.OnTabSelectedListener =
+  addOnTabSelectedListener(onTabReselected = onTabReselected)
 
 inline fun TabLayout.addOnTabSelectedListener(
   crossinline onTabSelected: (tab: TabLayout.Tab) -> Unit = { _ -> },
