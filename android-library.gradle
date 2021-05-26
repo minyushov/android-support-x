@@ -18,6 +18,10 @@ android {
       includeAndroidResources = true
     }
   }
+
+  publishing {
+    singleVariant "release"
+  }
 }
 
 tasks.register("sourcesJar", Jar) {

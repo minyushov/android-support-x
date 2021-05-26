@@ -4,20 +4,20 @@ ext {
   androidTargetSdkVersion = 30
   androidBuildToolsVersion = "30.0.3"
 
-  kotlinVersion = "1.4.30"
+  kotlinVersion = "1.5.10"
   kotlinTest = "org.jetbrains.kotlin:kotlin-test:$kotlinVersion"
-  kotlinCoroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.3"
+  kotlinCoroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.0"
 
-  androidCore = "androidx.core:core-ktx:1.5.0-beta02"
-  androidRecyclerView = "androidx.recyclerview:recyclerview:1.2.0-beta02"
-  androidAppcompat = "androidx.appcompat:appcompat:1.3.0-beta01"
-  androidAnnotation = "androidx.annotation:annotation:1.1.0"
+  androidCore = "androidx.core:core-ktx:1.6.0-beta01"
+  androidRecyclerView = "androidx.recyclerview:recyclerview:1.2.0"
+  androidAppcompat = "androidx.appcompat:appcompat:1.4.0-alpha01"
+  androidAnnotation = "androidx.annotation:annotation:1.3.0-alpha01"
 
   material = "com.google.android.material:material:1.3.0"
 
-  testCore = "androidx.test:core-ktx:1.3.1-alpha03"
+  testCore = "androidx.test:core-ktx:1.4.0-beta01"
   junit = "junit:junit:4.13.2"
   robolectric = "org.robolectric:robolectric:4.5.1"
-  mockito = "org.mockito:mockito-core:3.7.7"
-  mockitoKtx = "com.nhaarman.mockitokotlin2:mockito-kotlin:2.2.0"
+  mockito = "org.mockito:mockito-core:3.10.0"
+  mockitoKtx = "org.mockito.kotlin:mockito-kotlin:3.2.0"
 }
