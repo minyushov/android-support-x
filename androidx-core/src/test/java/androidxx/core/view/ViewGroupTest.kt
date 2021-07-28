@@ -71,9 +71,12 @@ class ViewGroupTest {
   @Test
   fun lastWithPredicate() {
     val view = View(context)
+    viewGroup.addView(View(context))
     viewGroup.addView(view)
 
-    assertFailsWith(NoSuchElementException::class) { viewGroup.last { it !== view } }
+    val missingView = View(context)
+
+    assertFailsWith(NoSuchElementException::class) { viewGroup.last { it == missingView } }
     assertSame(view, viewGroup.last { it == view })
   }
 
@@ -91,9 +94,12 @@ class ViewGroupTest {
   @Test
   fun lastOrNullWithPredicate() {
     val view = View(context)
+    viewGroup.addView(View(context))
     viewGroup.addView(view)
 
-    assertNull(viewGroup.lastOrNull { it !== view })
+    val missingView = View(context)
+
+    assertNull(viewGroup.lastOrNull { it == missingView })
     assertSame(view, viewGroup.lastOrNull { it == view })
   }
 

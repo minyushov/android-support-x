@@ -58,7 +58,7 @@ inline fun ViewGroup.last(): View {
  * @throws [NoSuchElementException] if no such child view is found.
  */
 inline fun ViewGroup.last(predicate: (View) -> Boolean): View {
-  for (index in (childCount - 1)..0) {
+  for (index in (childCount - 1) downTo 0) {
     val view = getChildAt(index)
     if (predicate(view)) return view
   }
@@ -77,7 +77,7 @@ inline fun ViewGroup.lastOrNull(): View? {
  * Returns the last child view matching the given [predicate], or `null` if no such child view is found.
  */
 inline fun ViewGroup.lastOrNull(predicate: (View) -> Boolean): View? {
-  for (index in (childCount - 1)..0) {
+  for (index in (childCount - 1) downTo 0) {
     val view = getChildAt(index)
     if (predicate(view)) return view
   }
