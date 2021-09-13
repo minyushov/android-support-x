@@ -3,14 +3,19 @@
 package androidxx.core.view
 
 import android.content.res.ColorStateList
+import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewTreeObserver
 import androidx.annotation.ColorInt
+import androidx.core.graphics.Insets
 import androidx.core.view.OnApplyWindowInsetsListener
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import kotlinx.coroutines.suspendCancellableCoroutine
 import kotlin.coroutines.resume
+
+inline val View.inflater: LayoutInflater
+  get() = context.inflater
 
 inline fun View.onLayout(crossinline action: (view: View) -> Unit): View.OnLayoutChangeListener {
   val listener = View.OnLayoutChangeListener { view, _, _, _, _, _, _, _, _ -> action(view) }
@@ -86,3 +91,6 @@ suspend fun View.awaitAnimationFrame() = suspendCancellableCoroutine<Unit> { con
   continuation.invokeOnCancellation { removeCallbacks(runnable) }
   postOnAnimation(runnable)
 }
+
+inline fun View.updatePadding(insets: Insets) =
+  setPadding(insets.left, insets.top, insets.right, insets.bottom)

@@ -83,3 +83,18 @@ inline fun ViewGroup.lastOrNull(predicate: (View) -> Boolean): View? {
   }
   return null
 }
+
+inline fun ViewGroup.onHierarchyChanged(
+  crossinline onChildAdded: (child: View) -> Unit = {},
+  crossinline onChildRemoved: (child: View) -> Unit = {}
+): ViewGroup.OnHierarchyChangeListener {
+  val listener = object : ViewGroup.OnHierarchyChangeListener {
+    override fun onChildViewAdded(parent: View, child: View) =
+      onChildAdded.invoke(child)
+
+    override fun onChildViewRemoved(parent: View, child: View) =
+      onChildRemoved.invoke(child)
+  }
+  setOnHierarchyChangeListener(listener)
+  return listener
+}
