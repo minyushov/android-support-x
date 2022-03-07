@@ -22,6 +22,11 @@ android {
   publishing {
     singleVariant "release"
   }
+
+  compileOptions {
+    sourceCompatibility javaVersion
+    targetCompatibility javaVersion
+  }
 }
 
 tasks.register("sourcesJar", Jar) {

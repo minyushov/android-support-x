@@ -14,3 +14,9 @@ dependencies {
   testImplementation mockitoKtx
   testImplementation project(":test-utils")
 }
+
+tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile.class) {
+  kotlinOptions {
+    freeCompilerArgs += "-Xopt-in=androidx.paging.ExperimentalPagingApi"
+  }
+}
