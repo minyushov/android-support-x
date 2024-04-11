@@ -1,5 +1,5 @@
 ### core-ktx
-[![Download](https://api.bintray.com/packages/minyushov/androidx/core-ktx/images/download.svg)](https://bintray.com/minyushov/androidx/core-ktx/_latestVersion)
+![Maven Central](https://img.shields.io/maven-central/v/io.github.minyushov/android-ktx)
 
 ```groovy
 dependencies {
@@ -8,7 +8,7 @@ dependencies {
 ```
 
 ### recyclerview-ktx
-[![Download](https://api.bintray.com/packages/minyushov/androidx/recyclerview-ktx/images/download.svg)](https://bintray.com/minyushov/androidx/recyclerview-ktx/_latestVersion)
+![Maven Central](https://img.shields.io/maven-central/v/io.github.minyushov/recyclerview-ktx)
 
 ```groovy
 dependencies {
@@ -17,7 +17,7 @@ dependencies {
 ```
 
 ### material-ktx
-[![Download](https://api.bintray.com/packages/minyushov/androidx/material-ktx/images/download.svg)](https://bintray.com/minyushov/androidx/material-ktx/_latestVersion)
+![Maven Central](https://img.shields.io/maven-central/v/io.github.minyushov/material-ktx)
 
 ```groovy
 dependencies {
