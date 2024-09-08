@@ -13,6 +13,7 @@ import android.view.WindowInsets
 import android.view.WindowManager
 import androidx.annotation.AnyRes
 import androidx.annotation.AttrRes
+import androidx.annotation.ColorInt
 import androidx.annotation.ColorRes
 import androidx.core.content.ContextCompat
 import androidx.core.content.getSystemService
@@ -23,8 +24,9 @@ fun Context.getAttrValue(@AttrRes attr: Int): Int =
     .apply { theme.resolveAttribute(attr, this, true) }
     .resourceId
 
-inline fun Context.getColorCompat(@ColorRes color: Int): Int =
-  ContextCompat.getColor(this, color)
+@ColorInt
+inline fun Context.getColorAttrValue(@AttrRes attr: Int): Int =
+  getColor(getAttrValue(attr))
 
 inline fun Context.getColorStateListCompat(@ColorRes color: Int): ColorStateList =
   ContextCompat.getColorStateList(this, color)

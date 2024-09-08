@@ -8,7 +8,7 @@ buildscript {
 
   dependencies {
     classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
-    classpath "com.android.tools.build:gradle:7.1.2"
+    classpath "com.android.tools.build:gradle:8.7.0-alpha07"
   }
 }
 
@@ -17,13 +17,4 @@ allprojects {
     mavenCentral()
     google()
   }
-  tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach {
-    kotlinOptions {
-      jvmTarget = javaVersion.toString()
-    }
-  }
-}
-
-tasks.register("clean", Delete) {
-  delete rootProject.buildDir
 }

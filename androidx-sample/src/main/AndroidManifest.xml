@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest
-  xmlns:android="http://schemas.android.com/apk/res/android"
-  xmlns:tools="http://schemas.android.com/tools"
-  package="androidxx.sample">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools">
 
   <application
     android:allowBackup="false"
@@ -11,9 +9,11 @@
     android:roundIcon="@mipmap/app_icon_round"
     android:supportsRtl="false"
     android:theme="@style/AppTheme"
-    tools:ignore="GoogleAppIndexingWarning">
+    tools:ignore="DataExtractionRules,GoogleAppIndexingWarning">
 
-    <activity android:name=".MainActivity">
+    <activity
+      android:name=".MainActivity"
+      android:exported="true">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
 

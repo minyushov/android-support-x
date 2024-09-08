@@ -5,7 +5,6 @@ package androidxx.core.app
 import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
-import android.os.Build
 
 inline fun PendingActivityIntent(
   context: Context,
@@ -17,11 +16,7 @@ inline fun PendingActivityIntent(
     context,
     requestCode,
     intent,
-    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-      flags or PendingIntent.FLAG_IMMUTABLE
-    } else {
-      flags
-    }
+    flags or PendingIntent.FLAG_IMMUTABLE
   )
 
 inline fun PendingBroadcastIntent(
@@ -34,9 +29,5 @@ inline fun PendingBroadcastIntent(
     context,
     requestCode,
     intent,
-    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-      flags or PendingIntent.FLAG_IMMUTABLE
-    } else {
-      flags
-    }
+    flags or PendingIntent.FLAG_IMMUTABLE
   )

@@ -1,5 +1,3 @@
-@file:Suppress("NOTHING_TO_INLINE")
-
 package androidxx.material.tabs
 
 import com.google.android.material.tabs.TabLayout

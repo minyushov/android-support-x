@@ -2,7 +2,10 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 
 android {
-  compileSdkVersion androidCompileSdkVersion
+  namespace = "androidxx.testutils"
+
+  compileSdkVersion = androidCompileSdkVersion
+  buildToolsVersion = androidBuildToolsVersion
 
   defaultConfig {
     minSdkVersion androidMinSdkVersion

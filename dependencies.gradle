@@ -1,25 +1,25 @@
 ext {
-  javaVersion = JavaVersion.VERSION_11
+  javaVersion = JavaVersion.VERSION_21
 
-  androidMinSdkVersion = 22
-  androidCompileSdkVersion = 31
-  androidTargetSdkVersion = 30
-  androidBuildToolsVersion = "32.0.0"
+  androidMinSdkVersion = 23
+  androidCompileSdkVersion = 35
+  androidTargetSdkVersion = 35
+  androidBuildToolsVersion = "35.0.0"
 
-  kotlinVersion = "1.6.10"
+  kotlinVersion = "2.0.10"
   kotlinTest = "org.jetbrains.kotlin:kotlin-test:$kotlinVersion"
-  kotlinCoroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0"
+  kotlinCoroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.9.0-RC.2"
 
-  androidCore = "androidx.core:core-ktx:1.7.0"
-  androidRecyclerView = "androidx.recyclerview:recyclerview:1.2.1"
-  androidAppcompat = "androidx.appcompat:appcompat:1.4.1"
-  androidAnnotation = "androidx.annotation:annotation:1.3.0"
+  androidCore = "androidx.core:core-ktx:1.15.0-alpha02"
+  androidRecyclerView = "androidx.recyclerview:recyclerview:1.4.0-beta01"
+  androidAppcompat = "androidx.appcompat:appcompat:1.7.0"
+  androidAnnotation = "androidx.annotation:annotation:1.9.0-alpha02"
 
-  material = "com.google.android.material:material:1.5.0"
+  material = "com.google.android.material:material:1.13.0-alpha05"
 
-  testCore = "androidx.test:core-ktx:1.4.0"
+  testCore = "androidx.test:core-ktx:1.6.1"
   junit = "junit:junit:4.13.2"
-  robolectric = "org.robolectric:robolectric:4.7.3"
-  mockito = "org.mockito:mockito-core:4.3.1"
-  mockitoKtx = "org.mockito.kotlin:mockito-kotlin:4.0.0"
+  robolectric = "org.robolectric:robolectric:4.13"
+  mockito = "org.mockito:mockito-core:5.12.0"
+  mockitoKtx = "org.mockito.kotlin:mockito-kotlin:5.4.0"
 }

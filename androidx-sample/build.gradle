@@ -2,8 +2,10 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 
 android {
-  compileSdkVersion androidCompileSdkVersion
-  buildToolsVersion androidBuildToolsVersion
+  namespace = "androidxx.sample"
+
+  compileSdk = androidCompileSdkVersion
+  buildToolsVersion = androidBuildToolsVersion
 
   defaultConfig {
     applicationId "androidxx.sample"
@@ -23,5 +25,5 @@ dependencies {
 
   implementation androidAppcompat
 
-  implementation "androidx.constraintlayout:constraintlayout:2.0.4"
+  implementation "androidx.constraintlayout:constraintlayout:2.1.4"
 }

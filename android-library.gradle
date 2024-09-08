@@ -47,7 +47,7 @@ afterEvaluate {
         artifactId = libraryArtifactId
         version = libraryVersion
 
-        from(components.findByName("release"))
+        from(components.release)
 
         pom {
           name = artifactId

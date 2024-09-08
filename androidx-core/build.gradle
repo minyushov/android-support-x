@@ -1,5 +1,7 @@
 apply from: "${rootDir}/android-library.gradle"
 
+android.namespace = "androidxx.core"
+
 dependencies {
   implementation kotlinCoroutines
 
